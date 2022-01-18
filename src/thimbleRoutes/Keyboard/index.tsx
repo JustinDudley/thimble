@@ -7,10 +7,10 @@ export const Keyboard:React.FC = () => {
             <div>hello from Keyboard</div>
             <div>
                 <nav
-                style={{
-                    borderBottom: "solid 1px",
-                    paddingBottom: "1rem"
-                }}
+                    style={{
+                        borderBottom: "solid 1px",
+                        paddingBottom: "1rem"
+                    }}
                 >
                 <Link to="/">go to Home</Link>
                 </nav>
