@@ -2,10 +2,9 @@ import React from 'react';
 
 import { ThimbleRoutes } from '../../thimbleRoutes';
 
-function App() {
+export const App: React.FC = () => {
   return (
     <ThimbleRoutes />
   );
 }
 
-export default App;
