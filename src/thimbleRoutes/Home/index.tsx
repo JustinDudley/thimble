@@ -14,7 +14,7 @@ export const Home: React.FC  = () => {
                         paddingBottom: "1rem"
                     }}
                 >
-                <Link to="/keyboard">go to Keyboard</Link>
+                    <Link to="/keyboard">go to Keyboard</Link>
                 </nav>
             </div>
       </div>

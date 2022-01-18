@@ -12,7 +12,7 @@ export const Keyboard:React.FC = () => {
                         paddingBottom: "1rem"
                     }}
                 >
-                <Link to="/">go to Home</Link>
+                    <Link to="/">go to Home</Link>
                 </nav>
             </div>
       </div>
