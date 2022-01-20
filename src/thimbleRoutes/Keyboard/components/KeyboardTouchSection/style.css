@@ -2,3 +2,8 @@
     height: 35%;
     color: green;
 }
+
+#keyboardRow {
+    display: flex;
+    flex-direction: row;
+}

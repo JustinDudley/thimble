@@ -1,0 +1,18 @@
+#mini {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+}
+
+#miniRow {
+    display: flex;
+    flex-direction: row;
+}
+
+#letterBox {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 10px;
+}
