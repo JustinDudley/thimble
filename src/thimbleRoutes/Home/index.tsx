@@ -6,10 +6,12 @@ import "./style.css"
 export const Home: React.FC  = () => {
     return (
         <div id='home'>
-            <div>Welcome to THIMBLE !</div>
-            <nav>
-                <Link to="/keyboard">get started</Link>
-            </nav>
+            <div id='welcome'>Welcome to THIMBLE</div>
+            <div id='navButton'>
+                <nav>
+                    <Link to="/keyboard" style={{textDecoration: 'none', color: '#301D43'}}>get started</Link>
+                </nav>
+            </div>
       </div>
     )
 }

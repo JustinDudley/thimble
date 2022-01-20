@@ -1,3 +1,24 @@
-#home{
-    color: red
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #CCC4F8;
+}
+
+#welcome {
+    color: #301D43;
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+#navButton {
+    background-color: #7E74B2;
+    padding: 10px;
+    border-width: 2px;
+    border-color: black;
+    font-size: 1.5rem;
+    color: black;
 }
