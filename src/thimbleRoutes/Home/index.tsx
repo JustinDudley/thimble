@@ -5,7 +5,7 @@ import "./style.css"
 
 export const Home: React.FC  = () => {
     return (
-        <div id='home'>
+        <div id='homePage'>
             <div id='welcome'>Welcome to THIMBLE</div>
             <nav id='navButton'>
                 <Link to="/keyboard" id='linkInHome'>get started</Link>

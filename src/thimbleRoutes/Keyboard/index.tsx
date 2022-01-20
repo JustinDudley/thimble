@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HomeLink } from './components/HomeLinkSection';
+
+import "./style.css"
 
 export const Keyboard:React.FC = () => {
     return (
-        <div>
+        <div id='keyboardPage'>
+            <HomeLink />
             <div>keyboard page</div>
-            <nav>
-                <Link to="/">go back to Home</Link>
-            </nav>
       </div>
     )
 }
