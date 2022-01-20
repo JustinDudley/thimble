@@ -7,11 +7,9 @@ export const Home: React.FC  = () => {
     return (
         <div id='home'>
             <div id='welcome'>Welcome to THIMBLE</div>
-            <div id='navButton'>
-                <nav>
-                    <Link to="/keyboard" style={{textDecoration: 'none', color: '#301D43'}}>get started</Link>
-                </nav>
-            </div>
+            <nav id='navButton'>
+                <Link to="/keyboard" id='linkInHome'>get started</Link>
+            </nav>
       </div>
     )
 }

@@ -9,16 +9,19 @@
 
 #welcome {
     color: #301D43;
-    font-size: 1.7rem;
     margin-bottom: 18px;
     font-weight: bold;
+    font-size: 1.7rem;
+}
+
+#linkInHome {
+    text-decoration: none;
+    color: #301D43
 }
 
 #navButton {
     background-color: #7E74B2;
     padding: 10px;
-    border-width: 2px;
-    border-color: black;
     font-size: 1.5rem;
     color: black;
 }
