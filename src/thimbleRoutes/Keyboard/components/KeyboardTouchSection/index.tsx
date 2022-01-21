@@ -1,20 +1,34 @@
 import React from 'react'
-import { LetterBox } from '../LetterBox'
+import { LetterBox, SpaceBox } from '../LetterBox'
 
 import './style.css'
 
 export const KeyboardTouchSection: React.FC = () => {
-    const array_4 = new Array(4).fill('');
-    const topRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
-    const middleRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
-    const bottomRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+    const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
+    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
+    const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+    const commas = [','];
+    const space = [' '];
+    const period = ['.'];
 
     return (
         <>
             <div id='keyboardTouchSection'>
-                <div id='keyboardRow'>
-                    {topRow.map(() => <LetterBox />)}
+                <div className='keyboardRow'>
+                    {lettersTop.map((letter) => <LetterBox letter={letter} />)}
                 </div>
+                <div className='keyboardRow'>
+                    {lettersMiddle.map((letter) => <LetterBox letter={letter} />)}
+                </div>
+                <div className='keyboardRow'>
+                    {lettersBottom.map((letter) => <LetterBox letter={letter} />)}
+                </div>
+                <div className='keyboardRow'>
+                    {commas.map((letter) => <LetterBox letter={letter} />)}
+                    {space.map((letter) => <SpaceBox letter={letter} />)}
+                    {period.map((letter) => <LetterBox letter={letter} />)}
+                </div>
+
             </div>
         </>
     )

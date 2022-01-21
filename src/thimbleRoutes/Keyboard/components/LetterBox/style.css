@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     width: 9.5vw;
     /* seems to be unnecessary: */
-    height: 100%;
+    /* height: 100%; */
 }
 
 #letterInset {
@@ -32,4 +32,16 @@
     top: 5%;
     left: 20%;
     font-size: 2.5rem;
+}
+
+/* ugh redundant code */
+
+#spaceBox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 47vw;
+    /* seems to be unnecessary: */
+    /* height: 100%; */
 }
