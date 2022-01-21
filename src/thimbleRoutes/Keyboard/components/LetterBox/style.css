@@ -16,3 +16,20 @@
     height: 100%;
 }
 
+#letterShadow {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: lightgrey;
+    z-index: -1;
+}
+
+#theLetter {
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    z-index: -1;
+    font-size: 2.5rem;
+}

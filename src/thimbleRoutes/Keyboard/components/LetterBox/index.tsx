@@ -18,32 +18,11 @@ const Mini: React.FC = () => {
 export const LetterBox: React.FC = () => {
     return (
         <div id="letterBox">
-            <div 
-                style={{
-                    position: 'absolute', 
-                    top: '10%', 
-                    left: '10%', 
-                    width: '80%', 
-                    height: '80%', 
-                    backgroundColor: 'lightgray', 
-                    zIndex: '-1'
-                }}
-            />
+            <div id="letterShadow" />
 
-             <div 
-                style={{
-                    position: 'absolute', 
-                    top: '5%', 
-                    left: '40%', 
-                    zIndex: '-1',
-                    fontSize: '2.5rem',
-                }}
-            >
-                k
-            </div> 
+            <div id='theLetter'>k</div> 
             {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
             
-  
             <Mini />
             <Mini />
             <Mini />
