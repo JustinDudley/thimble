@@ -1,5 +1,5 @@
 #linkSection {
-    background-color: #CCC4F8;
+    background-color: var(--home-purple);
     text-decoration: none;
     padding: 3px;
 }

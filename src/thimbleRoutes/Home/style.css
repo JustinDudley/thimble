@@ -1,6 +1,7 @@
 #homeViewHeight {
     height: 100vh;
-    background-color: #CCC4F8;}
+    background-color: var(--home-purple);
+}
 
 #homePage {
     display: flex;
@@ -10,20 +11,19 @@
 }
 
 #welcome {
-    color: #301D43;
+    color: var(--home-welcome-text);
     margin-bottom: 18px;
     font-weight: bold;
     font-size: 1.7rem;
 }
 
-#linkInHome {
-    text-decoration: none;
-    color: #301D43
-}
-
 #navButton {
-    background-color: #7E74B2;
+    background-color: var(--nav-purple);
     padding: 10px;
     font-size: 1.5rem;
-    color: black;
+}
+
+#linkInHome {
+    text-decoration: none;
+    color: var(--home-link-text);
 }

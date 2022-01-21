@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* colors */
+:root {
+  --home-purple:#CCC4F8;
+  --nav-purple: #7E74B2;
+  --home-welcome-text: #301D43;
+  --home-link-text: #301D43;
+}
