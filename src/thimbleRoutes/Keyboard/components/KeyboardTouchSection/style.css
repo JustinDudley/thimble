@@ -1,5 +1,7 @@
 #keyboardTouchSection {
     height: 35%;
+    background-color: var(--shadow-grey);
+    /* z-index: -2 */
 }
 
 #keyboardRow {

@@ -31,7 +31,7 @@ export const LetterBox: React.FC = () => {
             id="letterBox"
             onClick={() => {setCount(count + 1);console.log(count)}}
         >
-            <div id="letterShadow" />
+            <div id="letterInset" />
             <div id='theLetter'>k</div> 
             {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
             

@@ -3,6 +3,8 @@
     width: 33%;
     height: 20%;
     font-size: .5rem;
+    z-index: 1;
+    border-radius: 3px;
 }
 
 #letterBox {
@@ -15,20 +17,21 @@
     height: 100%;
 }
 
-#letterShadow {
+#letterInset {
     position: absolute;
     top: 10%;
     left: 10%;
     width: 80%;
     height: 80%;
-    background-color: var(--shadow-grey);
-    z-index: -1;
+    background-color: white;
+    border-radius: 6px;
+    /* z-index: -1; */
 }
 
 #theLetter {
     position: absolute;
     top: 5%;
     left: 40%;
-    z-index: -1;
+    /* z-index: -1; */
     font-size: 2.5rem;
 }
