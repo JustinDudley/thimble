@@ -4,6 +4,7 @@
     align-items: center;
     height: 35%;
     background-color: var(--shadow-grey);
+    padding-top: 8px;
 }
 
 .keyboardRow {
@@ -11,6 +12,6 @@
     flex-direction: row;
     justify-content: center;
     height: 23%;
-    padding: 4px 0;
     flex-wrap: wrap;
+    color: var(--letter-color);
 }
