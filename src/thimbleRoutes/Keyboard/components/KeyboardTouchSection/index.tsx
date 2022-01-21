@@ -12,9 +12,8 @@ export const KeyboardTouchSection: React.FC = () => {
     return (
         <>
             <div id='keyboardTouchSection'>
-                {/* hello from keyboardTouchSection */}
                 <div id='keyboardRow'>
-                    {array_4.map(() => <LetterBox />)}
+                    {topRow.map(() => <LetterBox />)}
                 </div>
             </div>
         </>

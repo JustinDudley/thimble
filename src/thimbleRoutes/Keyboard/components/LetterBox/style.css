@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 25%;
+    width: 9.5vw;
     /* seems to be unnecessary: */
     height: 100%;
 }
@@ -25,13 +25,11 @@
     height: 80%;
     background-color: white;
     border-radius: 6px;
-    /* z-index: -1; */
 }
 
 #theLetter {
     position: absolute;
     top: 5%;
-    left: 40%;
-    /* z-index: -1; */
+    left: 20%;
     font-size: 2.5rem;
 }
