@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { colors } from '../../../../helpers/jsColors';
 
 import './style.css'
 
 const Mini: React.FC<{count: number}> = ({count}) => {
-    const numShown = 3;
+    const numShown = 2;
     const [isClicked, setIsClicked] = useState(false);
     const [miniCount, setMiniCount] = useState(0);
 
@@ -14,13 +15,10 @@ const Mini: React.FC<{count: number}> = ({count}) => {
                 setIsClicked(true);
                 setMiniCount(count); 
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? 'red' : isClicked && count - (miniCount + 1) < numShown? 'blue': 'inherit'}}
+            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numShown? colors.purpleFaded: 'inherit'}}
             // #7C6CDD
             // #5526B2
-        >
-            {count},
-            {miniCount}
-        </div>
+        />
     )
 }
 
