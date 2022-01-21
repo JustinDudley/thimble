@@ -12,7 +12,7 @@ const Mini: React.FC = () => {
             onClick={() => {console.log('mini clicked'); setIsClicked(true);}}
             style={{backgroundColor: isClicked? 'red': 'inherit'}}
         >
-            x
+            
         </div>
     )
 }

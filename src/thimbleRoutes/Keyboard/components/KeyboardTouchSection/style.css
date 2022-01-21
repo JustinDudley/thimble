@@ -6,4 +6,7 @@
 #keyboardRow {
     display: flex;
     flex-direction: row;
+    width: 75%;
+    height: 25%;
+    padding: 12px;
 }
