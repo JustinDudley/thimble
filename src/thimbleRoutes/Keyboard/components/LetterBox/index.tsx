@@ -14,7 +14,9 @@ const Mini: React.FC<{count: number}> = ({count}) => {
                 setIsClicked(true);
                 setMiniCount(count); 
             }}
-            style={{backgroundColor: (isClicked && count - (miniCount + 1) < numShown)? 'red': 'inherit'}}
+            style={{backgroundColor: isClicked && count === miniCount + 1? 'red' : isClicked && count - (miniCount + 1) < numShown? 'blue': 'inherit'}}
+            // #7C6CDD
+            // #5526B2
         >
             {count},
             {miniCount}
