@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 import "./style.css"
 
-export const Home: React.FC  = () => {
+export const Home: React.FC<{appBarAdjustment: string}>  = ({appBarAdjustment}) => {
     return (
-        <div id='homePage'>
-            <div id='welcome'>Welcome to THIMBLE</div>
-            <nav id='navButton'>
-                <Link to="/keyboard" id='linkInHome'>get started</Link>
-            </nav>
+        <div id="homeViewHeight">
+            <div id='homePage' style={{height: appBarAdjustment}}>
+                <div id='welcome'>Welcome to THIMBLE</div>
+                <nav id='navButton'>
+                    <Link to="/keyboard" id='linkInHome'>get started</Link>
+                </nav>
+            </div>
       </div>
     )
 }

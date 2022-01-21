@@ -5,11 +5,13 @@ import { Keyboard } from './Keyboard';
 
 export const ThimbleRoutes: React.FC = () => {
 
+    const appBarAdjustment = '88%';
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='keyboard' element={<Keyboard />} />
+                <Route path='/' element={<Home appBarAdjustment={appBarAdjustment}/>} />
+                <Route path='keyboard' element={<Keyboard appBarAdjustment={appBarAdjustment}/>} />
             </Routes>
         </BrowserRouter>
     )

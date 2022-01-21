@@ -5,12 +5,14 @@ import { KeyboardTouchSection } from './components/KeyboardTouchSection';
 
 import "./style.css"
 
-export const Keyboard:React.FC = () => {
+export const Keyboard:React.FC<{appBarAdjustment: string}> = ({appBarAdjustment}) => {
     return (
-        <div id='keyboardPage'>
-            <HomeLinkSection />
-            <ExampleTextSection />
-            <KeyboardTouchSection />
+        <div id="keyboardViewHeight">
+            <div id='keyboardPage' style={{height: appBarAdjustment}}>
+                <HomeLinkSection />
+                <ExampleTextSection />
+                <KeyboardTouchSection />
+            </div>
         </div>
     )
 }
