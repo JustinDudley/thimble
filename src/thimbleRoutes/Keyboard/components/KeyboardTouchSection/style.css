@@ -1,12 +1,11 @@
 #keyboardTouchSection {
     height: 35%;
-    color: green;
 }
 
 #keyboardRow {
     display: flex;
     flex-direction: row;
-    width: 75%;
+    width: 50%;
     height: 25%;
     padding: 12px;
 }
