@@ -3,6 +3,8 @@
     border: 1px solid lightgray;
     width: 33%;
     height: 20%;
+    /* fontsize is temporary */
+    font-size: .5rem;
 }
 
 #letterBox {
