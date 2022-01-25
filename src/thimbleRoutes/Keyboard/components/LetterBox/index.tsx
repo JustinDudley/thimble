@@ -4,7 +4,7 @@ import { colors } from '../../../../helpers/jsColors';
 import './style.css'
 
 const Mini: React.FC<{count: number}> = ({count}) => {
-    const numShown = 2;
+    const numShown = 4;
     const [isClicked, setIsClicked] = useState(false);
     const [miniCount, setMiniCount] = useState(0);
 
