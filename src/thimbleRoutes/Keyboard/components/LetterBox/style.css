@@ -1,10 +1,21 @@
 #mini {
     box-sizing: border-box;
+    border: 1px solid green;
     width: 33%;
     height: 20%;
-    font-size: .5rem;
-    z-index: 1;
+    /* z-index: 1; */
     border-radius: 3px;
+}
+
+#mini-relief {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: 10; */
+    background-color: inherit;
+    
 }
 
 #letterBox {
@@ -15,23 +26,31 @@
     width: 9.5vw;
     /* seems to be unnecessary: */
     /* height: 100%; */
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
 #letterInset {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 10%;
     left: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: white;
+    width: 50%;
+    height: 50%;
+    background-color: inherit;
     border-radius: 6px;
+    box-sizing: border-box;
+    border: 3px solid gray;
 }
 
 #theLetter {
-    position: absolute;
+    /* position: absolute;
     top: 5%;
     left: 20%;
-    font-size: 2.5rem;
+    font-size: 2.5rem; */
+    background-color: inherit;
 }
 
 /* ugh redundant code */
