@@ -1,5 +1,5 @@
 import React from 'react'
-import { LetterBox/*, SpaceBox */ } from '../LetterBox'
+import { LetterBox, SpaceBox } from '../LetterBox'
 
 import './style.css'
 
@@ -23,11 +23,11 @@ export const KeyboardTouchSection: React.FC = () => {
                 <div className='keyboardRow'>
                     {lettersBottom.map((letter) => <LetterBox letter={letter} />)}
                 </div>
-                {/* <div className='keyboardRow'>
+                <div className='keyboardRow'>
                     {commas.map((letter) => <LetterBox letter={letter} />)}
                     {space.map((letter) => <SpaceBox letter={letter} />)}
                     {period.map((letter) => <LetterBox letter={letter} />)}
-                </div> */}
+                </div>
 
             </div>
         </>
