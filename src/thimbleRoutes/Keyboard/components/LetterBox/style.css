@@ -28,10 +28,10 @@
     height: 90%;
     border-radius: 6px;
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    border: 1px solid black;
     font-size: 2rem;
-    background-color: white;
-    opacity: 0.9;
+    /* background-color: white; */
+    /* opacity: 0.9; */
     color: black;
 }
 
