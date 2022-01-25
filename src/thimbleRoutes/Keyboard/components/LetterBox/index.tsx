@@ -12,16 +12,23 @@ const Mini: React.FC<{count: number}> = ({count}) => {
         <>
         <div 
             id="mini" 
-            onClick={() => {
-                setIsClicked(true);
-                setMiniCount(count); 
-            }}
+            // onClick={() => {
+            //     setIsClicked(true);
+            //     setMiniCount(count); 
+            // }}
             style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numShown? colors.purpleFaded: 'white'}}
         >
+            <div 
+                id='mini-relief'
+                onClick={() => {
+                    setIsClicked(true);
+                    setMiniCount(count); 
+                    // alert('mini-relief clicked');
+                }}
+            >
+                i
+            </div>
         </div>
-        {/* <div id='mini-relief'>
-            i
-        </div> */}
         </>
     )
 }
@@ -33,11 +40,11 @@ export const LetterBox: React.FC<{letter: string}> = ({letter}) => {
     return (
         <div 
             id="letterBox"
-            onClick={() => {setCount(count + 1);console.log(count)}}
+            onClick={() => {/*alert('letterbox clicked');*/ setCount(count + 1);console.log(count)}}
         >
-            <div id="letterInset" >
+            {/* <div id="letterInset" > */}
                 <div id='theLetter'>{letter}</div> 
-            </div>
+            {/* </div> */}
             {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
             
             {array_15.map(() => <Mini count={count} />)}
@@ -46,20 +53,20 @@ export const LetterBox: React.FC<{letter: string}> = ({letter}) => {
 }
 
 // ugh redundant code
-export const SpaceBox: React.FC<{letter: string}> = ({letter}) => {
-    const array_15 = new Array(15).fill('')
-    const [count, setCount] = useState(0)
+// export const SpaceBox: React.FC<{letter: string}> = ({letter}) => {
+//     const array_15 = new Array(15).fill('')
+//     const [count, setCount] = useState(0)
 
-    return (
-        <div 
-            id="spaceBox"
-            onClick={() => {setCount(count + 1);console.log(count)}}
-        >
-            <div id="letterInset" />
-            <div id='theLetter'>{letter}</div> 
-            {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
+//     return (
+//         <div 
+//             id="spaceBox"
+//             onClick={() => {setCount(count + 1);console.log(count)}}
+//         >
+//             <div id="letterInset" />
+//             <div id='theLetter'>{letter}</div> 
+//             {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
             
-            {array_15.map(() => <Mini count={count} />)}
-        </div>
-    )
-}
+//             {array_15.map(() => <Mini count={count} />)}
+//         </div>
+//     )
+// }
