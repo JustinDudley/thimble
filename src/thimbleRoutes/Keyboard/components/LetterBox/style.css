@@ -12,7 +12,7 @@
     flex-wrap: wrap;
 }
 
-#theLetter {
+#letter {
     pointer-events: none;
     position: absolute;
     top: 5%;

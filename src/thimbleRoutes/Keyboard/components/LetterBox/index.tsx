@@ -31,9 +31,8 @@ export const LetterBox: React.FC<{letter: string}> = ({letter}) => {
             onClick={() => {setCount(count + 1);console.log(count)}}
         >
             {array_15.map(() => <Mini count={count} />)}
-            <div id='theLetter'>{letter}</div> 
+            <div id='letter'>{letter}</div> 
             {/* <img style={{pointerEvents: 'none', position: 'absolute', top: '5%', left: '5%', width: '90%', height: '90%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '6px', boxSizing: 'border-box', border: '1px solid black'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
-            
         </div>
     )
 }
