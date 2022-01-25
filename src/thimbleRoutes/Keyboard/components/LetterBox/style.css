@@ -15,13 +15,13 @@
 #theLetter {
     pointer-events: none;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     top: 5%;
     left: 5%;
     width: 90%;
     height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 6px;
     box-sizing: border-box;
     border: 1px solid black;

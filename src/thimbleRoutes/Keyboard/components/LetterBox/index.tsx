@@ -32,7 +32,7 @@ export const LetterBox: React.FC<{letter: string}> = ({letter}) => {
         >
             {array_15.map(() => <Mini count={count} />)}
             <div id='theLetter'>{letter}</div> 
-            {/* <img style={{position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%' , zIndex: '-2'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
+            {/* <img style={{pointerEvents: 'none', position: 'absolute', top: '5%', left: '5%', width: '90%', height: '90%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '6px', boxSizing: 'border-box', border: '1px solid black'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
             
         </div>
     )
