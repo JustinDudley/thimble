@@ -5,21 +5,11 @@
     border-radius: 3px;
 }
 
-/* ugh redundant code */
-#spaceBox {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 47vw;
-}
-
 #letterBox {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 9.5vw;
 }
 
 #theLetter {
@@ -38,4 +28,3 @@
     font-size: 2rem;
     color: black;
 }
-
