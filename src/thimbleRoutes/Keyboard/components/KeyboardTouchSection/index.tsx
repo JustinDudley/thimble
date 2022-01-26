@@ -7,9 +7,7 @@ export const KeyboardTouchSection: React.FC = () => {
     const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
     const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
     const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
-    const commas = [','];
-    const space = [' '];
-    const period = ['.'];
+    const spaceRow = [',', ' ', '.']
 
     return (
         <>
@@ -24,9 +22,7 @@ export const KeyboardTouchSection: React.FC = () => {
                     {lettersBottom.map((letter) => <LetterBox letter={letter} />)}
                 </div>
                 <div className='keyboardRow'>
-                    {commas.map((letter) => <LetterBox letter={letter} />)}
-                    {space.map((letter) => <LetterBox letter={letter} />)}
-                    {period.map((letter) => <LetterBox letter={letter} />)}
+                    {spaceRow.map((letter) => <LetterBox letter={letter} />)}
                 </div>
             </div>
         </>
