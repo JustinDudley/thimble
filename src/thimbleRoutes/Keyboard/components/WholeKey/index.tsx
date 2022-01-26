@@ -21,7 +21,7 @@ const MiniBox: React.FC<{count: number}> = ({count}) => {
 }
 
 export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
-    const miniBoxes = new Array(15).fill('')
+    const miniBoxes = new Array(16).fill('')
     const [count, setCount] = useState(0)
 
     return (
@@ -32,7 +32,6 @@ export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
         >
             {miniBoxes.map(() => <MiniBox count={count} />)}
             <div id='shown-key'>{letter}</div> 
-            {/* <img style={{pointerEvents: 'none', position: 'absolute', top: '5%', left: '5%', width: '90%', height: '90%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '6px', boxSizing: 'border-box', border: '1px solid black'}} src={require("../../../../assets/images/letter_D.png")} alt='letter' width='100%' height='100%' /> */}
         </div>
     )
 }
