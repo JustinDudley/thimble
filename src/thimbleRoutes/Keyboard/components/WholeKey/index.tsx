@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { colors } from '../../../../helpers/jsColors';
 
+import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
-const MiniBox: React.FC<{count: number}> = ({count}) => {
-    const numMiniShown = 4;
+// this file, and CSS file, assume a 4x4=16 miniBoxes in each wholeKey
+const keyWidth = 9.5;
+const spaceWidth = 47;
+const targetMult = 4; //How many times wider the target logo is than the width of the miniBox
+
+const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => {
+    const numMiniShown = 5;
     const [isClicked, setIsClicked] = useState(false);
     const [miniCount, setMiniCount] = useState(0);
 
@@ -15,8 +21,10 @@ const MiniBox: React.FC<{count: number}> = ({count}) => {
                 setIsClicked(true);
                 setMiniCount(count); 
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded: 'inherit'}}
-        />
+            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
+        >
+            {isClicked && <img src={TargetLogo} alt='target logo' style={{position: 'absolute', top: `-${1.5 * keyWidth/4}vw`, left: `-${1.5 * keyWidth/4}vw`, width: `${letter === ' '? (targetMult * 100) * keyWidth/spaceWidth : (targetMult * 100)}%`}} />}
+        </div>
     )
 }
 
@@ -27,10 +35,10 @@ export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
     return (
         <div 
             id="whole-key"
-            style={{ width: letter === ' '? '47vw': '9.5vw'}}
+            style={{ width: letter === ' '? `${spaceWidth}vw`: `${keyWidth}vw`}}
             onClick={() => {setCount(count + 1);console.log(count)}}
         >
-            {miniBoxes.map(() => <MiniBox count={count} />)}
+            {miniBoxes.map(() => <MiniBox letter={letter} count={count} />)}
             <div id='shown-key'>{letter}</div> 
         </div>
     )

@@ -1,5 +1,5 @@
 #mini-box {
-    box-sizing: border-box;
+    position: relative;
     width: 25%;
     height: 25%;
     border-radius: 3px;
