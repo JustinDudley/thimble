@@ -11,7 +11,7 @@ export const KeyboardTouchSection: React.FC = () => {
 
     return (
         <>
-            <div id='keyboardTouchSection'>
+            <div id='keyboard-touch-section'>
                 <div className='keyboardRow'>
                     {lettersTop.map((letter) => <LetterBox letter={letter} />)}
                 </div>

@@ -26,7 +26,7 @@ export const LetterBox: React.FC<{letter: string}> = ({letter}) => {
 
     return (
         <div 
-            id="letterBox"
+            id="letter-box"
             style={{ width: letter === ' '? '47vw': '9.5vw'}}
             onClick={() => {setCount(count + 1);console.log(count)}}
         >
