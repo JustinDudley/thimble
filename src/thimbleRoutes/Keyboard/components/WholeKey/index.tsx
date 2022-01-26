@@ -5,9 +5,10 @@ import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
 // this file, and CSS file, assume a 4x4=16 miniBoxes in each wholeKey
-const keyWidth = 9.5;
+const numMinisInRow = 3;
+const numMinisInColumn = 3;
+const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
 const spaceWidth = 47;
-const targetMult = 4; //How many times wider the target logo is than the width of the miniBox
 
 const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => {
     const numMiniShown = 5;
@@ -23,13 +24,23 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
             }}
             style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
         >
-            {isClicked && <img src={TargetLogo} alt='target logo' style={{position: 'absolute', top: `-${1.5 * keyWidth/4}vw`, left: `-${1.5 * keyWidth/4}vw`, width: `${letter === ' '? (targetMult * 100) * keyWidth/spaceWidth : (targetMult * 100)}%`}} />}
+            {isClicked && <img 
+                src={TargetLogo} 
+                alt='target logo' 
+                style={{
+                    position: 'absolute', 
+                    top: `-${keyWidth/3}vw`,
+                    left: `-${keyWidth/3}vw`,
+                    width: `${keyWidth}vw`, 
+                    pointerEvents: 'none'
+                }} 
+            />}
         </div>
     )
 }
 
 export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
-    const miniBoxes = new Array(16).fill('')
+    const miniBoxes = new Array(numMinisInRow * numMinisInColumn).fill('')
     const [count, setCount] = useState(0)
 
     return (
