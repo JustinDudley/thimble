@@ -29,8 +29,9 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
                 alt='target logo' 
                 style={{
                     position: 'absolute', 
-                    top: `calc(${-9.5 * 0.5}vw + 50%)`,
-                    left: `${9.5 * (-0.5 + 0.5/numMinisInRow)}vw`,
+                    // move center of target (1) to top-left of MiniBox, then (2) to centerpoint of MiniBox
+                    left: `${keyWidth * (-0.5 + 0.5/numMinisInRow)}vw`,
+                    top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none'
                 }} 
