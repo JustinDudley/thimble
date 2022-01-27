@@ -10,10 +10,12 @@ const numMinisInColumn = 3;
 const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
 const spaceWidth = 47;
 
-const MiniBox: React.FC<{letter: string; keyCount: number}> = ({letter, keyCount}) => {
-    const numMiniShown = 5;
+const MiniBox: React.FC<{letter: string; keyCount: number; keyboardCount: number;}> = ({letter, keyCount, keyboardCount}) => {
+    const numMiniToShow = 3;
+    const numTargetsToShow = 2;
     const [isClicked, setIsClicked] = useState(false);
     const [miniCount, setMiniCount] = useState(0);
+    const [keyBoardCountSnapshot, setKeyboardCountSnapshot] = useState(0);
 
     return (
         <div 
@@ -21,10 +23,11 @@ const MiniBox: React.FC<{letter: string; keyCount: number}> = ({letter, keyCount
             onClick={() => {
                 setIsClicked(true);
                 setMiniCount(keyCount); 
+                setKeyboardCountSnapshot(keyboardCount);
             }}
-            style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
+            style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
         >
-            {isClicked && <img 
+            {isClicked && keyboardCount - numTargetsToShow <= keyBoardCountSnapshot && <img 
                 src={TargetLogo} 
                 alt='target logo' 
                 style={{
@@ -33,14 +36,15 @@ const MiniBox: React.FC<{letter: string; keyCount: number}> = ({letter, keyCount
                     left: letter === ' ' ? `${keyWidth * (-0.5) + (0.5 * spaceWidth)/numMinisInRow}vw` : `${keyWidth * (-0.5) + (0.5 * keyWidth)/numMinisInRow}vw`,
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.4,                    
                 }} 
             />}
         </div>
     )
 }
 
-export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
+export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({letter, keyboardCount}) => {
     const miniBoxes = new Array(numMinisInRow * numMinisInColumn).fill('')
     const [keyCount, setKeyCount] = useState(0)
 
@@ -48,9 +52,9 @@ export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
         <div 
             id="whole-key"
             style={{ width: letter === ' '? `${spaceWidth}vw`: `${keyWidth}vw`}}
-            onClick={() => {setKeyCount(keyCount + 1);console.log(keyCount)}}
+            onClick={() => {setKeyCount(keyCount + 1)}}
         >
-            {miniBoxes.map(() => <MiniBox letter={letter} keyCount={keyCount} />)}
+            {miniBoxes.map(() => <MiniBox letter={letter} keyCount={keyCount} keyboardCount={keyboardCount} />)}
             <div id='shown-key'>{letter}</div> 
         </div>
     )
