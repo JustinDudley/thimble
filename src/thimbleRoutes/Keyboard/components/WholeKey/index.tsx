@@ -65,16 +65,21 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
 
     let direction = '';
 
-    switch(highestIndex) {
-        case 0: direction = 'left top'; break;
-        case 1: direction = 'top'; break;
-        case 2: direction = 'right top'; break;
-        case 3: direction = 'top'; break;
-        case 4: direction = ''; break;
-        case 5: direction = 'right'; break;
-        case 6: direction = 'right bottom'; break;
-        case 7: direction = 'bottom'; break;
-        case 8: direction = 'right bottom';
+    if (max === 0) {
+        direction = '';
+    }
+    else {
+        switch(highestIndex) {
+            case 0: direction = 'left top'; break;
+            case 1: direction = 'top'; break;
+            case 2: direction = 'right top'; break;
+            case 3: direction = 'top'; break;
+            case 4: direction = ''; break;
+            case 5: direction = 'right'; break;
+            case 6: direction = 'right bottom'; break;
+            case 7: direction = 'bottom'; break;
+            case 8: direction = 'right bottom';
+        }
     }
 
     console.log(direction)
