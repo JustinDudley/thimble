@@ -22,7 +22,7 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
                 setIsClicked(true);
                 setMiniCount(count); 
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'gray'}}
+            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
         >
             {isClicked && <img 
                 src={TargetLogo} 
