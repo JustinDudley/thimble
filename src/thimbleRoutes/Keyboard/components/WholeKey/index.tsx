@@ -30,7 +30,7 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
                 style={{
                     position: 'absolute', 
                     // move center of target (1) to top-left of MiniBox, then (2) to centerpoint of MiniBox
-                    left: `${keyWidth * (-0.5 + 0.5/numMinisInRow)}vw`,
+                    left: letter === ' ' ? `${keyWidth * (-0.5) + (0.5 * spaceWidth)/numMinisInRow}vw` : `${keyWidth * (-0.5 + 0.5/numMinisInRow)}vw`,
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none'
