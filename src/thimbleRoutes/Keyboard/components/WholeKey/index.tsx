@@ -25,7 +25,8 @@ const MiniBox: React.FC<{letter: string; keyCount: number; keyboardCount: number
                 setMiniCount(keyCount); 
                 setKeyboardCountSnapshot(keyboardCount);
             }}
-            style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
+            // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
+            // style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
         >
             {isClicked && keyboardCount - numTargetsToShow <= keyBoardCountSnapshot && <img 
                 src={TargetLogo} 
@@ -37,7 +38,7 @@ const MiniBox: React.FC<{letter: string; keyCount: number; keyboardCount: number
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none',
-                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.4,                    
+                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.3,                    
                 }} 
             />}
         </div>
