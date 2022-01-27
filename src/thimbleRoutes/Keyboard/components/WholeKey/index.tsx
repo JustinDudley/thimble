@@ -4,7 +4,7 @@ import { colors } from '../../../../helpers/jsColors';
 import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
-// this file, and CSS file, assume a 4x4=16 miniBoxes in each wholeKey
+// this file, and CSS file, assume a 3x3=9 miniBoxes in each wholeKey
 const numMinisInRow = 3;
 const numMinisInColumn = 3;
 const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
@@ -22,15 +22,15 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
                 setIsClicked(true);
                 setMiniCount(count); 
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
+            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'gray'}}
         >
             {isClicked && <img 
                 src={TargetLogo} 
                 alt='target logo' 
                 style={{
                     position: 'absolute', 
-                    top: `-${keyWidth/3}vw`,
-                    left: `-${keyWidth/3}vw`,
+                    top: `calc(${-9.5 * 0.5}vw + 50%)`,
+                    left: `${9.5 * (-0.5 + 0.5/numMinisInRow)}vw`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none'
                 }} 
