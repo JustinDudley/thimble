@@ -4,13 +4,13 @@ import { colors } from '../../../../helpers/jsColors';
 import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
-// this file, and CSS file, assume a 3x3=9 miniBoxes in each wholeKey
+// this file, and especially CSS file, assume a 3x3=9 miniBoxes in each wholeKey
 const numMinisInRow = 3;
 const numMinisInColumn = 3;
 const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
 const spaceWidth = 47;
 
-const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => {
+const MiniBox: React.FC<{letter: string; keyCount: number}> = ({letter, keyCount}) => {
     const numMiniShown = 5;
     const [isClicked, setIsClicked] = useState(false);
     const [miniCount, setMiniCount] = useState(0);
@@ -20,16 +20,16 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
             id="mini-box" 
             onClick={() => {
                 setIsClicked(true);
-                setMiniCount(count); 
+                setMiniCount(keyCount); 
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
+            style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniShown? colors.purpleFaded:'inherit'}}
         >
             {isClicked && <img 
                 src={TargetLogo} 
                 alt='target logo' 
                 style={{
                     position: 'absolute', 
-                    // move center of target (1) to top-left of MiniBox, then (2) to centerpoint of MiniBox
+                    // move center of target (1) to left and top of MiniBox, then (2) to centerpoint of MiniBox
                     left: letter === ' ' ? `${keyWidth * (-0.5) + (0.5 * spaceWidth)/numMinisInRow}vw` : `${keyWidth * (-0.5) + (0.5 * keyWidth)/numMinisInRow}vw`,
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
@@ -42,15 +42,15 @@ const MiniBox: React.FC<{letter: string; count: number}> = ({letter, count}) => 
 
 export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
     const miniBoxes = new Array(numMinisInRow * numMinisInColumn).fill('')
-    const [count, setCount] = useState(0)
+    const [keyCount, setKeyCount] = useState(0)
 
     return (
         <div 
             id="whole-key"
             style={{ width: letter === ' '? `${spaceWidth}vw`: `${keyWidth}vw`}}
-            onClick={() => {setCount(count + 1);console.log(count)}}
+            onClick={() => {setKeyCount(keyCount + 1);console.log(keyCount)}}
         >
-            {miniBoxes.map(() => <MiniBox letter={letter} count={count} />)}
+            {miniBoxes.map(() => <MiniBox letter={letter} keyCount={keyCount} />)}
             <div id='shown-key'>{letter}</div> 
         </div>
     )
