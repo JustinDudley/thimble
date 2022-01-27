@@ -38,7 +38,8 @@ const MiniBox: React.FC<{letter: string; keyCount: number; keyboardCount: number
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none',
-                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.3,                    
+                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.3,
+                    zIndex: '1'                  
                 }} 
             />}
         </div>
@@ -56,7 +57,14 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
             onClick={() => {setKeyCount(keyCount + 1)}}
         >
             {miniBoxes.map(() => <MiniBox letter={letter} keyCount={keyCount} keyboardCount={keyboardCount} />)}
-            <div id='shown-key'>{letter}</div> 
+            <div 
+                id='shown-key'
+                style={{background: 'linear-gradient(to right top, #E8E8E8 65%, #555)'}}
+            >
+                <div style={{zIndex: '1'}}>
+                    {letter}
+                </div>
+            </div> 
         </div>
     )
 }
