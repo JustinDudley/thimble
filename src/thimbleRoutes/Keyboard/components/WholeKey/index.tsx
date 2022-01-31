@@ -12,9 +12,10 @@ const spaceWidth = 47;
 
 const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; keyboardCounter: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
 }> = ({letter, keyCounter, keyboardCounter, miniBoxId, gradientRecord, setGradientRecord}) => {
-    const numTargetsToShow = 2;
-    const numMiniToShow = 3; //save
+    const numMinisToShow = 3; //save
     const [miniCounter, setMiniCounter] = useState(0); //save
+
+    const numTargetsToShow = 2;
     const [isClicked, setIsClicked] = useState(false);
     const [keyBoardCounterSnapshot, setKeyboardCounterSnapshot] = useState(0);
 
@@ -23,18 +24,16 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
             id="mini-box" 
             onClick={() => {
                 setIsClicked(true);
-                setMiniCounter(keyCounter); 
                 setKeyboardCounterSnapshot(keyboardCounter);
-                // keep for now, old method of incrementing gradient array:
-                // setGradientRecord(gradientRecord.map((element, index) => {if (index === miniBoxId) {element = element + 1} return element}))
                 setGradientRecord(() => {
                     gradientRecord[miniBoxId] = gradientRecord[miniBoxId] + 1;
                     return gradientRecord;
                 })
+                // setMiniCounter(keyCounter); //save
 
             }}
             // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
-            // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
+            // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMinisToShow? colors.purpleFaded:'inherit'}}
         >
             {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
