@@ -62,14 +62,8 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
     const max = Math.max(...gradientRecord)
     const highestIndex = gradientRecord.indexOf(max)
 
-  // refactor these 4 lines?
   let direction = '';
-  if (max !== 0) 
-  // {
-  //     direction = '';
-  // }
-  // else 
-  {
+  if (max !== 0) {
         switch(highestIndex) {
             case 0: direction = 'left top'; break;
             case 1: direction = 'top'; break;
