@@ -88,7 +88,7 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
                 id='shown-key'
                 style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`}}
             >
-                <div style={{zIndex: '1'}}>
+                <div id='letter'>
                     {letter}
                 </div>
             </div> 

@@ -36,3 +36,7 @@
     font-size: 2rem;
     color: black;
 }
+
+#letter {
+    z-index: 1;
+}
