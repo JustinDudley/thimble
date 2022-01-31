@@ -12,10 +12,10 @@ const spaceWidth = 47;
 
 const MiniBox: React.FC<{letter: string; keyCount: number; position: number; keyboardCount: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
 }> = ({letter, keyCount, keyboardCount, position, gradientRecord, setGradientRecord}) => {
-    const numMiniToShow = 3; //save
     const numTargetsToShow = 2;
-    const [isClicked, setIsClicked] = useState(false);
+    const numMiniToShow = 3; //save
     const [miniCount, setMiniCount] = useState(0); //save
+    const [isClicked, setIsClicked] = useState(false);
     const [keyBoardCountSnapshot, setKeyboardCountSnapshot] = useState(0);
 
     return (
