@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { WholeKey } from '../WholeKey'
 
 import './style.css'
@@ -9,20 +9,25 @@ export const KeyboardTouchSection: React.FC = () => {
     const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
     const spaceRow = [',', ' ', '.']
 
+    const [keyboardCounter, setKeyboardCounter] = useState(0);
+
     return (
         <>
-            <div id='keyboard-touch-section'>
+            <div 
+                id='keyboard-touch-section'
+                onClick={() => setKeyboardCounter(keyboardCounter + 1)}
+            >
                 <div className='keyboard-row'>
-                    {lettersTop.map((letter) => <WholeKey letter={letter} />)}
+                    {lettersTop.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {lettersMiddle.map((letter) => <WholeKey letter={letter} />)}
+                    {lettersMiddle.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {lettersBottom.map((letter) => <WholeKey letter={letter} />)}
+                    {lettersBottom.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {spaceRow.map((letter) => <WholeKey letter={letter} />)}
+                    {spaceRow.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
             </div>
         </>

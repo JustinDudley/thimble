@@ -1,37 +1,87 @@
 import React, { useState } from 'react';
-import { colors } from '../../../../helpers/jsColors';
+import { colors } from '../../../../helpers/jsColors'; //save
 
+import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
-const MiniBox: React.FC<{count: number}> = ({count}) => {
-    const numMiniShown = 4;
+// this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
+
+const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; keyboardCounter: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
+}> = ({letter, keyCounter, keyboardCounter, miniBoxId, gradientRecord, setGradientRecord}) => {
+    const numMinisToShow = 3; //save
+    const [miniCounter, setMiniCounter] = useState(0); //save
+
+    const numTargetsToShow = 2;
     const [isClicked, setIsClicked] = useState(false);
-    const [miniCount, setMiniCount] = useState(0);
+    const [keyBoardCounterSnapshot, setKeyboardCounterSnapshot] = useState(0);
 
     return (
         <div 
             id="mini-box" 
             onClick={() => {
                 setIsClicked(true);
-                setMiniCount(count); 
+                setKeyboardCounterSnapshot(keyboardCounter);
+                setGradientRecord(() => {
+                    gradientRecord[miniBoxId] = gradientRecord[miniBoxId] + 1;
+                    return gradientRecord;
+                })
+                // setMiniCounter(keyCounter); //save
+
             }}
-            style={{backgroundColor: isClicked && count === miniCount + 1? colors.purpleFeedback : isClicked && count - (miniCount + 1) < numMiniShown? colors.purpleFaded: 'inherit'}}
-        />
+            // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
+            // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMinisToShow? colors.purpleFaded:'inherit'}}
+        >
+            {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
+                src={TargetLogo} 
+                alt='target logo'
+                id='target-logo'
+                className={letter === ' '? 'space-target' : 'key-target'}
+                style={{
+                    opacity: keyboardCounter - 1 === keyBoardCounterSnapshot? 1: 0.3,
+                }} 
+            />}
+        </div>
     )
 }
 
-export const WholeKey: React.FC<{letter: string}> = ({letter}) => {
-    const miniBoxes = new Array(16).fill('')
-    const [count, setCount] = useState(0)
+export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({letter, keyboardCounter}) => {
+    const miniBoxIds = [0,1,2,3,4,5,6,7,8]
+    const [keyCounter, setKeyCounter] = useState(0)
+    const [gradientRecord, setGradientRecord] = useState([0,0,0,0,0,0,0,0,0]);
+
+    const mostPresses = Math.max(...gradientRecord)
+    const mostPressedMiniBox = gradientRecord.indexOf(mostPresses)
+
+  let direction = '';
+  if (mostPresses !== 0) {
+        switch(mostPressedMiniBox) {
+            case 0: direction = 'left top'; break;
+            case 1: direction = 'top'; break;
+            case 2: direction = 'right top'; break;
+            case 3: direction = 'left'; break;
+            case 4: direction = ''; break; //center gets clicked OR key has not yet been clicked at all
+            case 5: direction = 'right'; break;
+            case 6: direction = 'left bottom'; break;
+            case 7: direction = 'bottom'; break;
+            case 8: direction = 'right bottom';
+        }
+    }
 
     return (
         <div 
+            className={letter === ' '? 'space-whole-key' : 'key-whole-key'}
             id="whole-key"
-            style={{ width: letter === ' '? '47vw': '9.5vw'}}
-            onClick={() => {setCount(count + 1);console.log(count)}}
+            onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
-            {miniBoxes.map(() => <MiniBox count={count} />)}
-            <div id='shown-key'>{letter}</div> 
+            {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
+            <div 
+                id='shown-key'
+                style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`}}
+            >
+                <div id='letter'>
+                    {letter}
+                </div>
+            </div> 
         </div>
     )
 }

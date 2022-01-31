@@ -1,8 +1,24 @@
 #mini-box {
-    box-sizing: border-box;
-    width: 25%;
-    height: 25%;
+    position: relative;
+    width: 33%;
+    height: 33%;
     border-radius: 3px;
+}
+
+#target-logo {
+    position: absolute;
+    pointer-events: none;
+    top: calc(-0.5 * var(--key-width) + 50%);
+    width: var(--key-width);
+    z-index: 1;
+}
+
+.key-target {
+    left: calc(-0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row));
+}
+
+.space-target {
+    left: calc(-0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row));
 }
 
 #whole-key {
@@ -10,6 +26,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.key-whole-key {
+    width: var(--key-width);
+}
+
+.space-whole-key {
+    width: var(--space-width);
 }
 
 #shown-key {
@@ -27,4 +51,8 @@
     border: 1px solid black;
     font-size: 2rem;
     color: black;
+}
+
+#letter {
+    z-index: 1;
 }
