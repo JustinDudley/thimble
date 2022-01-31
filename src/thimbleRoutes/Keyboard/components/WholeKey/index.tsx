@@ -86,7 +86,7 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
             {miniBoxes.map((position) => <MiniBox position={position} letter={letter} keyCount={keyCount} keyboardCount={keyboardCount} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
             <div 
                 id='shown-key'
-                style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8 65%, #555)`}}
+                style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`}}
             >
                 <div style={{zIndex: '1'}}>
                     {letter}
