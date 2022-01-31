@@ -38,16 +38,14 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
         >
             {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
-                alt='target logo' 
+                alt='target logo'
+                id='target-logo'
                 style={{
-                    position: 'absolute', 
                     // move center of target (1) to left and top of MiniBox, then (2) to centerpoint of MiniBox
                     left: letter === ' ' ? `${keyWidth * (-0.5) + (0.5 * spaceWidth)/numMinisInRow}vw` : `${keyWidth * (-0.5) + (0.5 * keyWidth)/numMinisInRow}vw`,
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
-                    pointerEvents: 'none',
                     opacity: keyboardCounter - 1 === keyBoardCounterSnapshot? 1: 0.3,
-                    zIndex: '1'                  
                 }} 
             />}
         </div>

@@ -5,6 +5,12 @@
     border-radius: 3px;
 }
 
+#target-logo {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .key {
     width: var(--key-width);
 }
