@@ -25,13 +25,13 @@ const MiniBox: React.FC<{letter: string; keyCount: number; position: number; key
                 setIsClicked(true);
                 setMiniCount(keyCount); 
                 setKeyboardCountSnapshot(keyboardCount);
-                //refactor:
-                setGradientRecord(gradientRecord.map((element, index) => {
-                    if (index === position) {
-                        element = element + 1
-                    }
-                    return element
-                }))
+                // keep for now, old method of incrementing gradient array:
+                // setGradientRecord(gradientRecord.map((element, index) => {if (index === position) {element = element + 1} return element}))
+                setGradientRecord(() => {
+                    gradientRecord[position] = gradientRecord[position] + 1;
+                    return gradientRecord;
+                })
+
             }}
             // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
             // style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
