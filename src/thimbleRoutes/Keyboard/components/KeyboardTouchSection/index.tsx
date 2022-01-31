@@ -9,25 +9,25 @@ export const KeyboardTouchSection: React.FC = () => {
     const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
     const spaceRow = [',', ' ', '.']
 
-    const [keyboardCount, setKeyboardCount] = useState(0);
+    const [keyboardCounter, setKeyboardCounter] = useState(0);
 
     return (
         <>
             <div 
                 id='keyboard-touch-section'
-                onClick={() => setKeyboardCount(keyboardCount + 1)}
+                onClick={() => setKeyboardCounter(keyboardCounter + 1)}
             >
                 <div className='keyboard-row'>
-                    {lettersTop.map((letter) => <WholeKey letter={letter} keyboardCount={keyboardCount} />)}
+                    {lettersTop.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {lettersMiddle.map((letter) => <WholeKey letter={letter} keyboardCount={keyboardCount} />)}
+                    {lettersMiddle.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {lettersBottom.map((letter) => <WholeKey letter={letter} keyboardCount={keyboardCount} />)}
+                    {lettersBottom.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
                 <div className='keyboard-row'>
-                    {spaceRow.map((letter) => <WholeKey letter={letter} keyboardCount={keyboardCount} />)}
+                    {spaceRow.map((letter) => <WholeKey key={letter} letter={letter} keyboardCounter={keyboardCounter} />)}
                 </div>
             </div>
         </>

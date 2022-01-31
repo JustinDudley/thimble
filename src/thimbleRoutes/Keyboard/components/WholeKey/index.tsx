@@ -10,33 +10,33 @@ const numMinisInColumn = 3;
 const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
 const spaceWidth = 47;
 
-const MiniBox: React.FC<{letter: string; keyCount: number; position: number; keyboardCount: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
-}> = ({letter, keyCount, keyboardCount, position, gradientRecord, setGradientRecord}) => {
+const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; keyboardCounter: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
+}> = ({letter, keyCounter, keyboardCounter, miniBoxId, gradientRecord, setGradientRecord}) => {
     const numTargetsToShow = 2;
     const numMiniToShow = 3; //save
-    const [miniCount, setMiniCount] = useState(0); //save
+    const [miniCounter, setMiniCounter] = useState(0); //save
     const [isClicked, setIsClicked] = useState(false);
-    const [keyBoardCountSnapshot, setKeyboardCountSnapshot] = useState(0);
+    const [keyBoardCounterSnapshot, setKeyboardCounterSnapshot] = useState(0);
 
     return (
         <div 
             id="mini-box" 
             onClick={() => {
                 setIsClicked(true);
-                setMiniCount(keyCount); 
-                setKeyboardCountSnapshot(keyboardCount);
+                setMiniCounter(keyCounter); 
+                setKeyboardCounterSnapshot(keyboardCounter);
                 // keep for now, old method of incrementing gradient array:
-                // setGradientRecord(gradientRecord.map((element, index) => {if (index === position) {element = element + 1} return element}))
+                // setGradientRecord(gradientRecord.map((element, index) => {if (index === miniBoxId) {element = element + 1} return element}))
                 setGradientRecord(() => {
-                    gradientRecord[position] = gradientRecord[position] + 1;
+                    gradientRecord[miniBoxId] = gradientRecord[miniBoxId] + 1;
                     return gradientRecord;
                 })
 
             }}
             // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
-            // style={{backgroundColor: isClicked && keyCount === miniCount + 1? colors.purpleFeedback : isClicked && keyCount - (miniCount + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
+            // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMiniToShow? colors.purpleFaded:'inherit'}}
         >
-            {isClicked && keyboardCount - numTargetsToShow <= keyBoardCountSnapshot && <img 
+            {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
                 alt='target logo' 
                 style={{
@@ -46,7 +46,7 @@ const MiniBox: React.FC<{letter: string; keyCount: number; position: number; key
                     top: `calc(-${keyWidth * 0.5}vw + 50%)`,
                     width: `${keyWidth}vw`, 
                     pointerEvents: 'none',
-                    opacity: keyboardCount - 1 === keyBoardCountSnapshot? 1: 0.3,
+                    opacity: keyboardCounter - 1 === keyBoardCounterSnapshot? 1: 0.3,
                     zIndex: '1'                  
                 }} 
             />}
@@ -54,17 +54,17 @@ const MiniBox: React.FC<{letter: string; keyCount: number; position: number; key
     )
 }
 
-export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({letter, keyboardCount}) => {
-    const miniBoxes = [0,1,2,3,4,5,6,7,8]
-    const [keyCount, setKeyCount] = useState(0)
+export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({letter, keyboardCounter}) => {
+    const miniBoxIds = [0,1,2,3,4,5,6,7,8]
+    const [keyCounter, setKeyCounter] = useState(0)
     const [gradientRecord, setGradientRecord] = useState([0,0,0,0,0,0,0,0,0]);
 
-    const max = Math.max(...gradientRecord)
-    const highestIndex = gradientRecord.indexOf(max)
+    const mostPresses = Math.max(...gradientRecord)
+    const mostPressedMiniBox = gradientRecord.indexOf(mostPresses)
 
   let direction = '';
-  if (max !== 0) {
-        switch(highestIndex) {
+  if (mostPresses !== 0) {
+        switch(mostPressedMiniBox) {
             case 0: direction = 'left top'; break;
             case 1: direction = 'top'; break;
             case 2: direction = 'right top'; break;
@@ -81,9 +81,9 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
         <div 
             id="whole-key"
             style={{ width: letter === ' '? `${spaceWidth}vw`: `${keyWidth}vw`}}
-            onClick={() => {setKeyCount(keyCount + 1)}}
+            onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
-            {miniBoxes.map((position) => <MiniBox position={position} letter={letter} keyCount={keyCount} keyboardCount={keyboardCount} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
+            {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
             <div 
                 id='shown-key'
                 style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`}}
