@@ -11,8 +11,6 @@ export const KeyboardTouchSection: React.FC = () => {
 
     const [keyboardCount, setKeyboardCount] = useState(0);
 
-    console.log('temp divider')
-
     return (
         <>
             <div 

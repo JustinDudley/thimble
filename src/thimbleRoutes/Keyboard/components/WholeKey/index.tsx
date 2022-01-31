@@ -12,10 +12,10 @@ const spaceWidth = 47;
 
 const MiniBox: React.FC<{letter: string; keyCount: number; position: number; keyboardCount: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
 }> = ({letter, keyCount, keyboardCount, position, gradientRecord, setGradientRecord}) => {
-    const numMiniToShow = 3;
+    const numMiniToShow = 3; //save
     const numTargetsToShow = 2;
     const [isClicked, setIsClicked] = useState(false);
-    const [miniCount, setMiniCount] = useState(0);
+    const [miniCount, setMiniCount] = useState(0); //save
     const [keyBoardCountSnapshot, setKeyboardCountSnapshot] = useState(0);
 
     return (
@@ -25,6 +25,7 @@ const MiniBox: React.FC<{letter: string; keyCount: number; position: number; key
                 setIsClicked(true);
                 setMiniCount(keyCount); 
                 setKeyboardCountSnapshot(keyboardCount);
+                //refactor:
                 setGradientRecord(gradientRecord.map((element, index) => {
                     if (index === position) {
                         element = element + 1
@@ -58,13 +59,11 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
     const [keyCount, setKeyCount] = useState(0)
     const [gradientRecord, setGradientRecord] = useState([0,0,0,0,0,0,0,0,0]);
 
-    // console.log(gradientRecord)
     const max = Math.max(...gradientRecord)
     const highestIndex = gradientRecord.indexOf(max)
-    // console.log(highestIndex)
 
+    // refactor these 4 lines?
     let direction = '';
-
     if (max === 0) {
         direction = '';
     }
@@ -74,15 +73,13 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
             case 1: direction = 'top'; break;
             case 2: direction = 'right top'; break;
             case 3: direction = 'top'; break;
-            case 4: direction = ''; break;
+            case 4: direction = ''; break; //center gets clicked OR key has not yet been clicked at all
             case 5: direction = 'right'; break;
             case 6: direction = 'right bottom'; break;
             case 7: direction = 'bottom'; break;
             case 8: direction = 'right bottom';
         }
     }
-
-    console.log(direction)
 
     return (
         <div 
@@ -93,7 +90,6 @@ export const WholeKey: React.FC<{letter: string; keyboardCount: number;}> = ({le
             {miniBoxes.map((position) => <MiniBox position={position} letter={letter} keyCount={keyCount} keyboardCount={keyboardCount} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
             <div 
                 id='shown-key'
-                // style={{background: gradientRecord[5] === 1 ? 'linear-gradient(to right top, #E8E8E8 65%, #555)': 'linear-gradient(to right top, #E8E8E8 65%, #E8E8E8)'}}
                 style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8 65%, #555)`}}
             >
                 <div style={{zIndex: '1'}}>
