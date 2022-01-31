@@ -5,6 +5,14 @@
     border-radius: 3px;
 }
 
+.key {
+    width: var(--key-width);
+}
+
+.space {
+    width: var(--space-width);
+}
+
 #whole-key {
     position: relative;
     display: flex;

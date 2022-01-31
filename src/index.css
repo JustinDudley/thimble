@@ -19,5 +19,9 @@ code {
   --home-welcome-text: #301D43;
   --home-link-text: #301D43;
   --shadow-grey: #E8E8E8;
-  --letter-color: #555
+  --letter-color: #555;
+
+  /* Beware:  These 2 variables have corresponding variables in WholeKey>index.tsx   */
+  --key-width: 9.5vw; 
+  --space-width: 47vw;
 }

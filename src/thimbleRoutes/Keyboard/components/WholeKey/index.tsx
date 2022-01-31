@@ -7,6 +7,7 @@ import './style.css'
 // this file, and especially CSS file, assume a 3x3=9 miniBoxes in each wholeKey
 const numMinisInRow = 3;
 const numMinisInColumn = 3;
+// Beware: keyWidth and spaceWidth have corresponding CSS variables in style.css
 const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
 const spaceWidth = 47;
 
@@ -78,8 +79,8 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
 
     return (
         <div 
+            className={letter === ' '? 'space' : 'key'}
             id="whole-key"
-            style={{ width: letter === ' '? `${spaceWidth}vw`: `${keyWidth}vw`}}
             onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
             {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
