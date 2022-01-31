@@ -4,7 +4,7 @@ import { colors } from '../../../../helpers/jsColors'; //save
 import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
-// this file, and especially CSS file, assume a 3x3=9 miniBoxes in each wholeKey
+// this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
 
 const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; keyboardCounter: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
 }> = ({letter, keyCounter, keyboardCounter, miniBoxId, gradientRecord, setGradientRecord}) => {
