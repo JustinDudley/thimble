@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import { colors } from '../../../../helpers/jsColors';
+import { colors } from '../../../../helpers/jsColors'; //save
 
 import TargetLogo from '../../../../assets/images/target-logo.svg'
 import './style.css'
 
 // this file, and especially CSS file, assume a 3x3=9 miniBoxes in each wholeKey
-const numMinisInRow = 3;
-const numMinisInColumn = 3;
-// Beware: keyWidth and spaceWidth have corresponding CSS variables in style.css
-const keyWidth = 9.5; // need space for 10 keys, so each is slightly less than 10% view-width
-const spaceWidth = 47;
 
 const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; keyboardCounter: number; gradientRecord: number[]; setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>
 }> = ({letter, keyCounter, keyboardCounter, miniBoxId, gradientRecord, setGradientRecord}) => {
@@ -40,11 +35,8 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
                 src={TargetLogo} 
                 alt='target logo'
                 id='target-logo'
+                className={letter === ' '? 'space-target' : 'key-target'}
                 style={{
-                    // move center of target (1) to left and top of MiniBox, then (2) to centerpoint of MiniBox
-                    left: letter === ' ' ? `${keyWidth * (-0.5) + (0.5 * spaceWidth)/numMinisInRow}vw` : `${keyWidth * (-0.5) + (0.5 * keyWidth)/numMinisInRow}vw`,
-                    top: `calc(-${keyWidth * 0.5}vw + 50%)`,
-                    width: `${keyWidth}vw`, 
                     opacity: keyboardCounter - 1 === keyBoardCounterSnapshot? 1: 0.3,
                 }} 
             />}
@@ -77,7 +69,7 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
 
     return (
         <div 
-            className={letter === ' '? 'space' : 'key'}
+            className={letter === ' '? 'space-whole-key' : 'key-whole-key'}
             id="whole-key"
             onClick={() => {setKeyCounter(keyCounter + 1)}}
         >

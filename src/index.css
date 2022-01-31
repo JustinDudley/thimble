@@ -21,7 +21,10 @@ code {
   --shadow-grey: #E8E8E8;
   --letter-color: #555;
 
-  /* Beware:  These 2 variables have corresponding variables in WholeKey>index.tsx   */
+  /* need space for 10 keys, so each is slightly less than 10% view-width */
   --key-width: 9.5vw; 
   --space-width: 47vw;
+
+  --num-minis-in-row: 3;
+
 }
