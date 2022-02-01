@@ -1,9 +1,9 @@
 import React from 'react'
 
-import "./style.css"
+import styles from "./style.module.css"
 
 export const ExampleTextSection: React.FC = () => {
     return (
-        <div id='example-text-section'>example text here</div>
+        <div id={styles.exampleTextSection}>example text here</div>
     )
 }
