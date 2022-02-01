@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { colors } from '../../../../helpers/jsColors'; //save
 
 import TargetLogo from '../../../../assets/images/target-logo.svg'
+import classNames from 'classnames'
 import styles from './style.module.css'
 
 // this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
@@ -34,7 +35,11 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
             {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
                 alt='target logo'
-                className={`${styles.targetLogo} ${letter === ' '? `${styles.targetSpacebar}` : ''} ${keyboardCounter - 1 !== keyBoardCounterSnapshot? `${styles.targetTrace}` : ''}`}
+                className={classNames(
+                    styles.targetLogo,
+                    {[styles.targetSpacebar]: letter === ' '},
+                    {[styles.targetTrace]: keyboardCounter - 1 !== keyBoardCounterSnapshot},  // [brackets] are necessary because this is an object key
+                )}
             />}
         </div>
     )
@@ -65,7 +70,10 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
 
     return (
         <div 
-            className={`${styles.wholeKey} ${letter === ' '? `${styles.wholeKeySpacebar}` : ''}`}
+            className={classNames(
+                styles.wholeKey,
+                {[styles.wholeKeySpacebar]: letter === ' '},
+            )}
             onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
             {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
