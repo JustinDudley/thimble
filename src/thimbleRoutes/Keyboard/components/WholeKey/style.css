@@ -5,20 +5,21 @@
     border-radius: 3px;
 }
 
-#target-logo {
+.target-logo {
     position: absolute;
     pointer-events: none;
     top: calc(-0.5 * var(--key-width) + 50%);
+    left: calc(-0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row));
     width: var(--key-width);
     z-index: 1;
 }
 
-.key-target {
-    left: calc(-0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row));
+.target-spacebar {
+    left: calc(-0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row));
 }
 
-.space-target {
-    left: calc(-0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row));
+.target-trace {
+    opacity: 0.3;
 }
 
 #whole-key {
