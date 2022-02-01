@@ -34,11 +34,7 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
             {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
                 alt='target logo'
-                id='target-logo'
-                className={letter === ' '? 'space-target' : 'key-target'}
-                style={{
-                    opacity: keyboardCounter - 1 === keyBoardCounterSnapshot? 1: 0.3,
-                }} 
+                className={`target-logo ${letter === ' '? 'target-spacebar' : ''} ${keyboardCounter - 1 !== keyBoardCounterSnapshot? 'target-trace' : ''}`}
             />}
         </div>
     )
@@ -59,7 +55,7 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
             case 1: direction = 'top'; break;
             case 2: direction = 'right top'; break;
             case 3: direction = 'left'; break;
-            case 4: direction = ''; break; //center gets clicked OR key has not yet been clicked at all
+            case 4: direction = ''; break; //key has not yet been clicked, OR center mini gets clicked
             case 5: direction = 'right'; break;
             case 6: direction = 'left bottom'; break;
             case 7: direction = 'bottom'; break;
