@@ -65,8 +65,7 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
 
     return (
         <div 
-            className={letter === ' '? `${styles.spaceWholeKey}` : `${styles.keyWholeKey}`}
-            id={styles.wholeKey}
+            className={`${styles.wholeKey} ${letter === ' '? `${styles.wholeKeySpacebar}` : ''}`}
             onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
             {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
