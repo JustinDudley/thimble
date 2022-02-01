@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { colors } from '../../../../helpers/jsColors'; //save
 
 import TargetLogo from '../../../../assets/images/target-logo.svg'
-import './style.css'
+import styles from './style.module.css'
 
 // this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
 
@@ -17,7 +17,7 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
 
     return (
         <div 
-            id="mini-box" 
+            id={styles.miniBox} 
             onClick={() => {
                 setIsClicked(true);
                 setKeyboardCounterSnapshot(keyboardCounter);
@@ -34,7 +34,7 @@ const MiniBox: React.FC<{letter: string; keyCounter: number; miniBoxId: number; 
             {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && <img 
                 src={TargetLogo} 
                 alt='target logo'
-                className={`target-logo ${letter === ' '? 'target-spacebar' : ''} ${keyboardCounter - 1 !== keyBoardCounterSnapshot? 'target-trace' : ''}`}
+                className={`${styles.targetLogo} ${letter === ' '? `${styles.targetSpacebar}` : ''} ${keyboardCounter - 1 !== keyBoardCounterSnapshot? `${styles.targetTrace}` : ''}`}
             />}
         </div>
     )
@@ -65,16 +65,16 @@ export const WholeKey: React.FC<{letter: string; keyboardCounter: number;}> = ({
 
     return (
         <div 
-            className={letter === ' '? 'space-whole-key' : 'key-whole-key'}
-            id="whole-key"
+            className={letter === ' '? `${styles.spaceWholeKey}` : `${styles.keyWholeKey}`}
+            id={styles.wholeKey}
             onClick={() => {setKeyCounter(keyCounter + 1)}}
         >
             {miniBoxIds.map((miniBoxId) => <MiniBox key={miniBoxId} miniBoxId={miniBoxId} letter={letter} keyCounter={keyCounter} keyboardCounter={keyboardCounter} gradientRecord={gradientRecord} setGradientRecord={setGradientRecord} />)}
             <div 
-                id='shown-key'
+                id={styles.shownKey}
                 style={{background: direction === ''? '#E8E8E8' : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`}}
             >
-                <div id='letter'>
+                <div id={styles.letter}>
                     {letter}
                 </div>
             </div> 

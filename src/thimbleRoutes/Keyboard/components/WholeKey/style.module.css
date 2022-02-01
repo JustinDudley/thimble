@@ -1,11 +1,11 @@
-#mini-box {
+#miniBox {
     position: relative;
     width: 33%;
     height: 33%;
     border-radius: 3px;
 }
 
-.target-logo {
+.targetLogo {
     position: absolute;
     pointer-events: none;
     top: calc(-0.5 * var(--key-width) + 50%);
@@ -14,30 +14,30 @@
     z-index: 1;
 }
 
-.target-spacebar {
+.targetSpacebar {
     left: calc(-0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row));
 }
 
-.target-trace {
+.targetTrace {
     opacity: 0.3;
 }
 
-#whole-key {
+#wholeKey {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.key-whole-key {
+.keyWholeKey {
     width: var(--key-width);
 }
 
-.space-whole-key {
+.spaceWholeKey {
     width: var(--space-width);
 }
 
-#shown-key {
+#shownKey {
     pointer-events: none;
     position: absolute;
     top: 5%;
