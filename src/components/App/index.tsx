@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ThimbleRoutes } from '../../thimbleRoutes';
+import { Routes } from '../../routes';
 
 export const App: React.FC = () => {
   return (
-    <ThimbleRoutes />
+    <Routes />
   );
 }
 
