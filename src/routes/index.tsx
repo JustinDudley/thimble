@@ -1,5 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes as RouterDomRoutes } from 'react-router-dom';
+import {
+   BrowserRouter,
+   Route,
+   Routes as RouterDomRoutes,
+} from 'react-router-dom';
 import { Home } from './Home';
 import { Keyboard } from './Keyboard';
 

@@ -38,28 +38,34 @@ const MiniBox: React.FC<MiniBoxProps> = ({
          // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
          // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMinisToShow? colors.purpleFaded:'inherit'}}
       >
-         {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && (
-            <img
-               src={TargetLogo}
-               alt="target logo"
-               className={classNames(
-                  styles.targetLogo,
-                  { [styles.targetSpacebar]: letter === ' ' },
-                  {
-                     [styles.targetTrace]:
-                        keyboardCounter - 1 !== keyBoardCounterSnapshot,
-                  }, // [brackets] are necessary because this is an object key
-               )}
-            />
-         )}
+         {isClicked &&
+            keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && (
+               <img
+                  src={TargetLogo}
+                  alt="target logo"
+                  className={classNames(
+                     styles.targetLogo,
+                     { [styles.targetSpacebar]: letter === ' ' },
+                     {
+                        [styles.targetTrace]:
+                           keyboardCounter - 1 !== keyBoardCounterSnapshot,
+                     }, // [brackets] are necessary because this is an object key
+                  )}
+               />
+            )}
       </div>
    );
 };
 
-export const WholeKey: React.FC<WholeKeyProps> = ({ letter, keyboardCounter }) => {
+export const WholeKey: React.FC<WholeKeyProps> = ({
+   letter,
+   keyboardCounter,
+}) => {
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
-   const [gradientRecord, setGradientRecord] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+   const [gradientRecord, setGradientRecord] = useState([
+      0, 0, 0, 0, 0, 0, 0, 0, 0,
+   ]);
 
    const mostPresses = Math.max(...gradientRecord);
    const mostPressedMiniBox = gradientRecord.indexOf(mostPresses);

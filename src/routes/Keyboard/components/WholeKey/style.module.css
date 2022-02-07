@@ -9,7 +9,9 @@
    position: absolute;
    pointer-events: none;
    top: calc(-0.5 * var(--key-width) + 50%);
-   left: calc(-0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row));
+   left: calc(
+      -0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row)
+   );
    width: var(--key-width);
    z-index: 1;
 }

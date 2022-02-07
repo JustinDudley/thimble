@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
             <div className={styles.welcome}>Welcome to THIMBLE</div>
             <nav className={styles.navButton}>
                <Link to="/keyboard" className={styles.linkInHome}>
-                  get started
+                  start training
                </Link>
             </nav>
          </div>
