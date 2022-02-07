@@ -14,7 +14,7 @@ export const KeyboardTouchSection: React.FC = () => {
    return (
       <>
          <div
-            id={styles.keyboardTouchSection}
+            className={styles.keyboardTouchSection}
             onClick={() => setKeyboardCounter(keyboardCounter + 1)}
          >
             <div className={styles.keyboardRow}>
