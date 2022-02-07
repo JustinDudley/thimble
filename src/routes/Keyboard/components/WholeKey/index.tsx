@@ -27,18 +27,16 @@ const MiniBox: React.FC<{
 
    const numTargetsToShow = 2;
    const [isClicked, setIsClicked] = useState(false);
-   const [keyBoardCounterSnapshot, setKeyboardCounterSnapshot] =
-      useState(0);
+   const [keyBoardCounterSnapshot, setKeyboardCounterSnapshot] = useState(0);
 
    return (
       <div
-         id={styles.miniBox}
+         className={styles.miniBox}
          onClick={() => {
             setIsClicked(true);
             setKeyboardCounterSnapshot(keyboardCounter);
             setGradientRecord(() => {
-               gradientRecord[miniBoxId] =
-                  gradientRecord[miniBoxId] + 1;
+               gradientRecord[miniBoxId] = gradientRecord[miniBoxId] + 1;
                return gradientRecord;
             });
             // setMiniCounter(keyCounter); //save
@@ -46,23 +44,20 @@ const MiniBox: React.FC<{
          // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
          // style={{backgroundColor: isClicked && keyCounter === miniCounter + 1? colors.purpleFeedback : isClicked && keyCounter - (miniCounter + 1) < numMinisToShow? colors.purpleFaded:'inherit'}}
       >
-         {isClicked &&
-            keyboardCounter - numTargetsToShow <=
-               keyBoardCounterSnapshot && (
-               <img
-                  src={TargetLogo}
-                  alt="target logo"
-                  className={classNames(
-                     styles.targetLogo,
-                     { [styles.targetSpacebar]: letter === ' ' },
-                     {
-                        [styles.targetTrace]:
-                           keyboardCounter - 1 !==
-                           keyBoardCounterSnapshot,
-                     }, // [brackets] are necessary because this is an object key
-                  )}
-               />
-            )}
+         {isClicked && keyboardCounter - numTargetsToShow <= keyBoardCounterSnapshot && (
+            <img
+               src={TargetLogo}
+               alt="target logo"
+               className={classNames(
+                  styles.targetLogo,
+                  { [styles.targetSpacebar]: letter === ' ' },
+                  {
+                     [styles.targetTrace]:
+                        keyboardCounter - 1 !== keyBoardCounterSnapshot,
+                  }, // [brackets] are necessary because this is an object key
+               )}
+            />
+         )}
       </div>
    );
 };
@@ -73,9 +68,7 @@ export const WholeKey: React.FC<{
 }> = ({ letter, keyboardCounter }) => {
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
-   const [gradientRecord, setGradientRecord] = useState([
-      0, 0, 0, 0, 0, 0, 0, 0, 0,
-   ]);
+   const [gradientRecord, setGradientRecord] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
    const mostPresses = Math.max(...gradientRecord);
    const mostPressedMiniBox = gradientRecord.indexOf(mostPresses);
@@ -133,7 +126,7 @@ export const WholeKey: React.FC<{
             />
          ))}
          <div
-            id={styles.shownKey}
+            className={styles.shownKey}
             style={{
                background:
                   direction === ''
@@ -141,7 +134,7 @@ export const WholeKey: React.FC<{
                      : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`,
             }}
          >
-            <div id={styles.letter}>{letter}</div>
+            <div className={styles.letter}>{letter}</div>
          </div>
       </div>
    );

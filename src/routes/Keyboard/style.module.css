@@ -1,8 +1,8 @@
-#keyboardViewHeight {
+.keyboardViewHeight {
    height: 100vh;
 }
 
-#keyboardPage {
+.keyboardPage {
    display: flex;
    flex-direction: column;
    justify-content: center;

@@ -9,9 +9,9 @@ export const Keyboard: React.FC<{ appBarAdjustment: string }> = ({
    appBarAdjustment,
 }) => {
    return (
-      <div id={styles.keyboardViewHeight}>
+      <div className={styles.keyboardViewHeight}>
          <div
-            id={styles.keyboardPage}
+            className={styles.keyboardPage}
             // need better solution, remove inline styling:
             style={{ height: appBarAdjustment }}
          >

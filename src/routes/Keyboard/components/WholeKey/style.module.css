@@ -1,4 +1,4 @@
-#miniBox {
+.miniBox {
    position: relative;
    width: 33%;
    height: 33%;
@@ -9,9 +9,7 @@
    position: absolute;
    pointer-events: none;
    top: calc(-0.5 * var(--key-width) + 50%);
-   left: calc(
-      -0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row)
-   );
+   left: calc(-0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row));
    width: var(--key-width);
    z-index: 1;
 }
@@ -38,7 +36,7 @@
    width: var(--space-width);
 }
 
-#shownKey {
+.shownKey {
    pointer-events: none;
    position: absolute;
    top: 5%;
@@ -55,6 +53,6 @@
    color: black;
 }
 
-#letter {
+.letter {
    z-index: 1;
 }

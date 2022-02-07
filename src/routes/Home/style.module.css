@@ -1,29 +1,29 @@
-#homeViewHeight {
+.homeViewHeight {
    height: 100vh;
    background-color: var(--home-purple);
 }
 
-#homePage {
+.homePage {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
 }
 
-#welcome {
+.welcome {
    color: var(--home-welcome-text);
    margin-bottom: 18px;
    font-weight: bold;
    font-size: 1.7rem;
 }
 
-#navButton {
+.navButton {
    background-color: var(--nav-purple);
    padding: 10px;
    font-size: 1.5rem;
 }
 
-#linkInHome {
+.linkInHome {
    text-decoration: none;
    color: var(--home-link-text);
 }
