@@ -1,29 +1,29 @@
 #homeViewHeight {
-  height: 100vh;
-  background-color: var(--home-purple);
+   height: 100vh;
+   background-color: var(--home-purple);
 }
 
 #homePage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 #welcome {
-  color: var(--home-welcome-text);
-  margin-bottom: 18px;
-  font-weight: bold;
-  font-size: 1.7rem;
+   color: var(--home-welcome-text);
+   margin-bottom: 18px;
+   font-weight: bold;
+   font-size: 1.7rem;
 }
 
 #navButton {
-  background-color: var(--nav-purple);
-  padding: 10px;
-  font-size: 1.5rem;
+   background-color: var(--nav-purple);
+   padding: 10px;
+   font-size: 1.5rem;
 }
 
 #linkInHome {
-  text-decoration: none;
-  color: var(--home-link-text);
+   text-decoration: none;
+   color: var(--home-link-text);
 }

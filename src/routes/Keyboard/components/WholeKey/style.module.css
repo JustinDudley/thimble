@@ -1,60 +1,60 @@
 #miniBox {
-  position: relative;
-  width: 33%;
-  height: 33%;
-  border-radius: 3px;
+   position: relative;
+   width: 33%;
+   height: 33%;
+   border-radius: 3px;
 }
 
 .targetLogo {
-  position: absolute;
-  pointer-events: none;
-  top: calc(-0.5 * var(--key-width) + 50%);
-  left: calc(
-    -0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row)
-  );
-  width: var(--key-width);
-  z-index: 1;
+   position: absolute;
+   pointer-events: none;
+   top: calc(-0.5 * var(--key-width) + 50%);
+   left: calc(
+      -0.5 * var(--key-width) + 0.5 * var(--key-width) / var(--num-minis-in-row)
+   );
+   width: var(--key-width);
+   z-index: 1;
 }
 
 .targetSpacebar {
-  left: calc(
-    -0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row)
-  );
+   left: calc(
+      -0.5 * var(--key-width) + 0.5 * var(--space-width) / var(--num-minis-in-row)
+   );
 }
 
 .targetTrace {
-  opacity: 0.3;
+   opacity: 0.3;
 }
 
 .wholeKey {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: var(--key-width);
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: var(--key-width);
 }
 
 .wholeKeySpacebar {
-  width: var(--space-width);
+   width: var(--space-width);
 }
 
 #shownKey {
-  pointer-events: none;
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  box-sizing: border-box;
-  border: 1px solid black;
-  font-size: 2rem;
-  color: black;
+   pointer-events: none;
+   position: absolute;
+   top: 5%;
+   left: 5%;
+   width: 90%;
+   height: 90%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 6px;
+   box-sizing: border-box;
+   border: 1px solid black;
+   font-size: 2rem;
+   color: black;
 }
 
 #letter {
-  z-index: 1;
+   z-index: 1;
 }
