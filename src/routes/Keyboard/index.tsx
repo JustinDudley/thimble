@@ -5,16 +5,10 @@ import { KeyboardTouchSection } from './components/KeyboardTouchSection';
 
 import styles from './style.module.css';
 
-export const Keyboard: React.FC<{ appBarAdjustment: string }> = ({
-   appBarAdjustment,
-}) => {
+export const Keyboard: React.FC = () => {
    return (
       <div className={styles.keyboardViewHeight}>
-         <div
-            className={styles.keyboardPage}
-            // need better solution, remove inline styling:
-            style={{ height: appBarAdjustment }}
-         >
+         <div className={styles.keyboardPage}>
             <HomeLinkSection />
             <ExampleTextSection />
             <KeyboardTouchSection />
