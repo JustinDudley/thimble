@@ -1,3 +1,6 @@
+// This file is named jsColors to distinguish it from the colors defined as CSS variables
+// For now this file is unused.  I am setting all colors as CSS variables
+
 export const colors = {
    blue: 'blue',
    green: 'green',
