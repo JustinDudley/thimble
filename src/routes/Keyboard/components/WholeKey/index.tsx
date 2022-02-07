@@ -4,17 +4,11 @@ import { colors } from '../../../../helpers/jsColors'; //save
 import TargetLogo from '../../../../assets/images/target-logo.svg';
 import classNames from 'classnames';
 import styles from './style.module.css';
+import { MiniBoxProps, WholeKeyProps } from '../../../../models/WholeKey';
 
 // this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
 
-const MiniBox: React.FC<{
-   letter: string;
-   keyCounter: number;
-   miniBoxId: number;
-   keyboardCounter: number;
-   gradientRecord: number[];
-   setGradientRecord: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({
+const MiniBox: React.FC<MiniBoxProps> = ({
    letter,
    keyCounter,
    keyboardCounter,
@@ -62,10 +56,7 @@ const MiniBox: React.FC<{
    );
 };
 
-export const WholeKey: React.FC<{
-   letter: string;
-   keyboardCounter: number;
-}> = ({ letter, keyboardCounter }) => {
+export const WholeKey: React.FC<WholeKeyProps> = ({ letter, keyboardCounter }) => {
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
    const [gradientRecord, setGradientRecord] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
