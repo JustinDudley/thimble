@@ -1,6 +1,6 @@
 .sampleRegion {
    display: flex;
    flex-direction: column;
-   height: 65%;
+   height: 55%;
    color: red;
 }

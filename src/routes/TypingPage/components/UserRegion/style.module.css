@@ -1,0 +1,8 @@
+.userRegion {
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   height: 10%;
+   background-color: var(--home-purple);
+   padding: 5px;
+}
