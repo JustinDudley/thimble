@@ -38,6 +38,10 @@
    width: var(--space-width);
 }
 
+.letter {
+   z-index: 1;
+}
+
 .shownKey {
    pointer-events: none;
    position: absolute;
@@ -55,6 +59,38 @@
    color: black;
 }
 
-.letter {
-   z-index: 1;
+.toLeftTop {
+   background: linear-gradient(to left top, #e8e8e8, 82%, #888);
+}
+
+.toTop {
+   background: linear-gradient(to top, #e8e8e8, 85%, #888);
+}
+
+.toRightTop {
+   background: linear-gradient(to right top, #e8e8e8, 82%, #888);
+}
+
+.toLeft {
+   background: linear-gradient(to left, #e8e8e8, 85%, #888);
+}
+
+.noGradient {
+   background: inherit;
+}
+
+.toRight {
+   background: linear-gradient(to right, #e8e8e8, 85%, #888);
+}
+
+.toLeftBottom {
+   background: linear-gradient(to left bottom, #e8e8e8, 82%, #888);
+}
+
+.toBottom {
+   background: linear-gradient(to bottom, #e8e8e8, 85%, #888);
+}
+
+.toRightBottom {
+   background: linear-gradient(to right bottom, #e8e8e8, 82%, #888);
 }

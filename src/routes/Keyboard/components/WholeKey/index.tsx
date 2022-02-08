@@ -69,38 +69,17 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
 
    const mostPresses = Math.max(...gradientRecord);
    const mostPressedMiniBox = gradientRecord.indexOf(mostPresses);
-
-   let direction = '';
-   if (mostPresses !== 0) {
-      switch (mostPressedMiniBox) {
-         case 0:
-            direction = 'left top';
-            break;
-         case 1:
-            direction = 'top';
-            break;
-         case 2:
-            direction = 'right top';
-            break;
-         case 3:
-            direction = 'left';
-            break;
-         case 4:
-            direction = '';
-            break; //key has not yet been clicked, OR center mini gets clicked
-         case 5:
-            direction = 'right';
-            break;
-         case 6:
-            direction = 'left bottom';
-            break;
-         case 7:
-            direction = 'bottom';
-            break;
-         case 8:
-            direction = 'right bottom';
-      }
-   }
+   const directions = [
+      'toLeftTop',
+      'toTop',
+      'toRightTop',
+      'toLeft',
+      'noGradient',
+      'toRight',
+      'toLeftBottom',
+      'toBottom',
+      'toRightBottom',
+   ];
 
    return (
       <div
@@ -123,13 +102,11 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
             />
          ))}
          <div
-            className={styles.shownKey}
-            style={{
-               background:
-                  direction === ''
-                     ? '#E8E8E8'
-                     : `linear-gradient(to ${direction}, #E8E8E8, 85%, #888)`,
-            }}
+            className={classNames(
+               styles.shownKey,
+               styles[directions[mostPressedMiniBox]],
+               { [styles.noGradient]: mostPresses === 0 },
+            )}
          >
             <div className={styles.letter}>{letter}</div>
          </div>
