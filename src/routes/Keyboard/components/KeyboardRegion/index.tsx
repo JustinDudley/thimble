@@ -3,7 +3,7 @@ import { WholeKey } from '../WholeKey';
 
 import styles from './style.module.css';
 
-export const KeyboardTouchSection: React.FC = () => {
+export const KeyboardRegion: React.FC = () => {
    const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
    const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
@@ -14,7 +14,7 @@ export const KeyboardTouchSection: React.FC = () => {
    return (
       <>
          <div
-            className={styles.keyboardTouchSection}
+            className={styles.keyboardRegion}
             onClick={() => setKeyboardCounter(keyboardCounter + 1)}
          >
             <div className={styles.keyboardRow}>

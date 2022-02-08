@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './style.module.css';
 
-export const HomeLinkSection: React.FC = () => {
+export const HomeLink: React.FC = () => {
    return (
       <nav>
          <Link to="/" className={styles.linkSection}>

@@ -1,17 +1,17 @@
 import React from 'react';
-import { ExampleTextSection } from './components/ExampleTextSection';
-import { HomeLinkSection } from './components/HomeLinkSection';
-import { KeyboardTouchSection } from './components/KeyboardTouchSection';
+import { SampleRegion } from './components/SampleRegion';
+import { HomeLink } from './components/HomeLink';
+import { KeyboardRegion } from './components/KeyboardRegion';
 
 import styles from './style.module.css';
 
 export const Keyboard: React.FC = () => {
    return (
-      <div className={styles.keyboardViewHeight}>
+      <div className={styles.keyboardPageViewHeight}>
          <div className={styles.keyboardPage}>
-            <HomeLinkSection />
-            <ExampleTextSection />
-            <KeyboardTouchSection />
+            <HomeLink />
+            <SampleRegion />
+            <KeyboardRegion />
          </div>
       </div>
    );
