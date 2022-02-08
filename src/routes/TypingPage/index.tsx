@@ -1,6 +1,6 @@
 import React from 'react';
-import { SampleRegion } from './components/SampleRegion';
-import { HomeLink } from './components/HomeLink';
+import { SampleSection } from './components/SampleSection';
+import { HomeLinkSection } from './components/HomeLinkSection';
 import { KeyboardDisplay } from './components/KeyboardDisplay';
 import { UserConsole } from './components/UserConsole';
 
@@ -10,8 +10,8 @@ export const TypingPage: React.FC = () => {
    return (
       <div className={styles.typingPageViewHeight}>
          <div className={styles.typingPage}>
-            <HomeLink />
-            <SampleRegion />
+            <HomeLinkSection />
+            <SampleSection />
             <UserConsole />
             <KeyboardDisplay />
          </div>
