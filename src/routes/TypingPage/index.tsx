@@ -1,7 +1,7 @@
 import React from 'react';
 import { SampleRegion } from './components/SampleRegion';
 import { HomeLink } from './components/HomeLink';
-import { KeyboardRegion } from './components/KeyboardRegion';
+import { KeyboardDisplay } from './components/KeyboardDisplay';
 import { UserRegion } from './components/UserRegion';
 
 import styles from './style.module.css';
@@ -13,7 +13,7 @@ export const TypingPage: React.FC = () => {
             <HomeLink />
             <SampleRegion />
             <UserRegion />
-            <KeyboardRegion />
+            <KeyboardDisplay />
          </div>
       </div>
    );
