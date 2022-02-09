@@ -20,12 +20,10 @@ const ResetButton: React.FC<{
    );
 };
 
-const UserSentence: React.FC = () => {
-   return (
-      <div className={styles.userSentence}>
-         user-typed sentence will go here...{' '}
-      </div>
-   );
+const UserSentence: React.FC<{ typedSentence: string }> = ({
+   typedSentence,
+}) => {
+   return <div className={styles.userSentence}>{typedSentence}</div>;
 };
 
 const Panel: React.FC<{
@@ -50,10 +48,17 @@ export const UserConsole: React.FC<{
    keyboardCounter: number;
    numResets: number;
    setNumResets: React.Dispatch<React.SetStateAction<number>>;
-}> = ({ bullseyeCounter, keyboardCounter, numResets, setNumResets }) => {
+   typedSentence: string;
+}> = ({
+   bullseyeCounter,
+   keyboardCounter,
+   numResets,
+   setNumResets,
+   typedSentence,
+}) => {
    return (
       <div className={styles.userConsole}>
-         <UserSentence />
+         <UserSentence typedSentence={typedSentence} />
          <Panel
             bullseyeCounter={bullseyeCounter}
             keyboardCounter={keyboardCounter}

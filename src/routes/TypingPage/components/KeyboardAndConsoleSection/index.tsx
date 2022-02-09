@@ -10,6 +10,7 @@ export const KeyboardAndConsoleSection: React.FC<{
 }> = ({ numResets, setNumResets }) => {
    const [keyboardCounter, setKeyboardCounter] = useState(0);
    const [bullseyeCounter, setBullseyeCounter] = useState(0);
+   const [typedSentence, setTypedSentence] = useState('');
 
    return (
       <div className={styles.keyboardAndConsoleSection}>
@@ -18,12 +19,15 @@ export const KeyboardAndConsoleSection: React.FC<{
             keyboardCounter={keyboardCounter}
             numResets={numResets}
             setNumResets={setNumResets}
+            typedSentence={typedSentence}
          />
          <KeyboardDisplay
             bullseyeCounter={bullseyeCounter}
             setBullseyeCounter={setBullseyeCounter}
             keyboardCounter={keyboardCounter}
             setKeyboardCounter={setKeyboardCounter}
+            typedSentence={typedSentence}
+            setTypedSentence={setTypedSentence}
          />
       </div>
    );

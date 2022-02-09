@@ -8,11 +8,15 @@ export const KeyboardDisplay: React.FC<{
    setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
    keyboardCounter: number;
    setKeyboardCounter: React.Dispatch<React.SetStateAction<number>>;
+   typedSentence: string;
+   setTypedSentence: React.Dispatch<React.SetStateAction<string>>;
 }> = ({
    bullseyeCounter,
    setBullseyeCounter,
    keyboardCounter,
    setKeyboardCounter,
+   typedSentence,
+   setTypedSentence,
 }) => {
    const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
@@ -33,6 +37,8 @@ export const KeyboardDisplay: React.FC<{
                      keyboardCounter={keyboardCounter}
                      bullseyeCounter={bullseyeCounter}
                      setBullseyeCounter={setBullseyeCounter}
+                     typedSentence={typedSentence}
+                     setTypedSentence={setTypedSentence}
                   />
                ))}
             </div>
@@ -44,6 +50,8 @@ export const KeyboardDisplay: React.FC<{
                      keyboardCounter={keyboardCounter}
                      bullseyeCounter={bullseyeCounter}
                      setBullseyeCounter={setBullseyeCounter}
+                     typedSentence={typedSentence}
+                     setTypedSentence={setTypedSentence}
                   />
                ))}
             </div>
@@ -55,6 +63,8 @@ export const KeyboardDisplay: React.FC<{
                      keyboardCounter={keyboardCounter}
                      bullseyeCounter={bullseyeCounter}
                      setBullseyeCounter={setBullseyeCounter}
+                     typedSentence={typedSentence}
+                     setTypedSentence={setTypedSentence}
                   />
                ))}
             </div>
@@ -66,6 +76,8 @@ export const KeyboardDisplay: React.FC<{
                      keyboardCounter={keyboardCounter}
                      bullseyeCounter={bullseyeCounter}
                      setBullseyeCounter={setBullseyeCounter}
+                     typedSentence={typedSentence}
+                     setTypedSentence={setTypedSentence}
                   />
                ))}
             </div>
