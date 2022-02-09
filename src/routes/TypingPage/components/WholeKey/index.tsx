@@ -65,6 +65,8 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
    setBullseyeCounter,
    letter,
    keyboardCounter,
+   typedSentence,
+   setTypedSentence,
 }) => {
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
@@ -93,6 +95,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
          })}
          onClick={() => {
             setKeyCounter(keyCounter + 1);
+            setTypedSentence(typedSentence + letter);
          }}
       >
          {miniBoxIds.map((miniBoxId) => (

@@ -14,4 +14,6 @@ export interface WholeKeyProps {
    setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
    letter: string;
    keyboardCounter: number;
+   typedSentence: string;
+   setTypedSentence: React.Dispatch<React.SetStateAction<string>>;
 }
