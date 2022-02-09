@@ -23,7 +23,7 @@ const ResetButton: React.FC<{
 const UserSentence: React.FC = () => {
    return (
       <div className={styles.userSentence}>
-         dynamically changing sentence goes here
+         user-typed sentence will go here...{' '}
       </div>
    );
 };
