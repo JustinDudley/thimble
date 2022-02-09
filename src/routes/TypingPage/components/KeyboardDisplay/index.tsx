@@ -4,10 +4,16 @@ import { WholeKey } from '../WholeKey';
 import styles from './style.module.css';
 
 export const KeyboardDisplay: React.FC<{
-   numResets: number;
+   bullseyeCounter: number;
+   setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
    keyboardCounter: number;
    setKeyboardCounter: React.Dispatch<React.SetStateAction<number>>;
-}> = ({ numResets, keyboardCounter, setKeyboardCounter }) => {
+}> = ({
+   bullseyeCounter,
+   setBullseyeCounter,
+   keyboardCounter,
+   setKeyboardCounter,
+}) => {
    const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
    const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
@@ -25,6 +31,8 @@ export const KeyboardDisplay: React.FC<{
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -34,6 +42,8 @@ export const KeyboardDisplay: React.FC<{
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -43,6 +53,8 @@ export const KeyboardDisplay: React.FC<{
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -52,6 +64,8 @@ export const KeyboardDisplay: React.FC<{
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
