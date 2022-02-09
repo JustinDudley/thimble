@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 import styles from './style.module.css';
 
-export const Home: React.FC = () => {
+export const HomePage: React.FC = () => {
    return (
       <div className={styles.homePageViewHeight}>
          <div className={styles.homePage}>
             <div className={styles.welcome}>Welcome to THIMBLE</div>
             <nav className={styles.navButton}>
-               <Link to="/keyboard" className={styles.linkInHome}>
+               <Link to="/typingPage" className={styles.linkInHome}>
                   start training
                </Link>
             </nav>

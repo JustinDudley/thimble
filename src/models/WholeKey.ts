@@ -1,4 +1,6 @@
 export interface MiniBoxProps {
+   bullseyeCounter: number;
+   setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
    letter: string;
    keyCounter: number;
    miniBoxId: number;
@@ -8,6 +10,8 @@ export interface MiniBoxProps {
 }
 
 export interface WholeKeyProps {
+   bullseyeCounter: number;
+   setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
    letter: string;
    keyboardCounter: number;
 }

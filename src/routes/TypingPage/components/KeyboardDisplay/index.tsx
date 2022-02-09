@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { WholeKey } from '../WholeKey';
 
 import styles from './style.module.css';
 
-export const KeyboardRegion: React.FC = () => {
+export const KeyboardDisplay: React.FC<{
+   bullseyeCounter: number;
+   setBullseyeCounter: React.Dispatch<React.SetStateAction<number>>;
+   keyboardCounter: number;
+   setKeyboardCounter: React.Dispatch<React.SetStateAction<number>>;
+}> = ({
+   bullseyeCounter,
+   setBullseyeCounter,
+   keyboardCounter,
+   setKeyboardCounter,
+}) => {
    const lettersTop = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
    const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
    const spaceRow = [',', ' ', '.'];
 
-   const [keyboardCounter, setKeyboardCounter] = useState(0);
-
    return (
       <>
          <div
-            className={styles.keyboardRegion}
+            className={styles.keyboardDisplay}
             onClick={() => setKeyboardCounter(keyboardCounter + 1)}
          >
             <div className={styles.keyboardRow}>
@@ -23,6 +31,8 @@ export const KeyboardRegion: React.FC = () => {
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -32,6 +42,8 @@ export const KeyboardRegion: React.FC = () => {
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -41,6 +53,8 @@ export const KeyboardRegion: React.FC = () => {
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>
@@ -50,6 +64,8 @@ export const KeyboardRegion: React.FC = () => {
                      key={letter}
                      letter={letter}
                      keyboardCounter={keyboardCounter}
+                     bullseyeCounter={bullseyeCounter}
+                     setBullseyeCounter={setBullseyeCounter}
                   />
                ))}
             </div>

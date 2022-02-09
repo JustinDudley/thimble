@@ -9,6 +9,8 @@ import { MiniBoxProps, WholeKeyProps } from '../../../../models/WholeKey';
 // this file, and especially CSS file, assume 3x3=9 miniBoxes in each wholeKey
 
 const MiniBox: React.FC<MiniBoxProps> = ({
+   bullseyeCounter,
+   setBullseyeCounter,
    letter,
    keyCounter,
    keyboardCounter,
@@ -33,6 +35,7 @@ const MiniBox: React.FC<MiniBoxProps> = ({
                gradientRecord[miniBoxId] = gradientRecord[miniBoxId] + 1;
                return gradientRecord;
             });
+            miniBoxId === 4 && setBullseyeCounter(bullseyeCounter + 1);
             // setMiniCounter(keyCounter); //save
          }}
          // SAVE BELOW:  This sets the colors for my follow-the-leader purple:
@@ -58,6 +61,8 @@ const MiniBox: React.FC<MiniBoxProps> = ({
 };
 
 export const WholeKey: React.FC<WholeKeyProps> = ({
+   bullseyeCounter,
+   setBullseyeCounter,
    letter,
    keyboardCounter,
 }) => {
@@ -93,6 +98,8 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
          {miniBoxIds.map((miniBoxId) => (
             <MiniBox
                key={miniBoxId}
+               bullseyeCounter={bullseyeCounter}
+               setBullseyeCounter={setBullseyeCounter}
                miniBoxId={miniBoxId}
                letter={letter}
                keyCounter={keyCounter}

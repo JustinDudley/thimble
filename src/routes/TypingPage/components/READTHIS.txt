@@ -1,0 +1,9 @@
+TypingPage/components contains 4 nested levels at this point:
+
+HomeLinkSection
+SampleSection
+KeyboardAndConsoleLogicWrap
+--KeyboardAndConsoleSection
+----UserConsole
+----KeyboardDisplay
+------WholeKey

@@ -4,15 +4,15 @@ import {
    Route,
    Routes as RouterDomRoutes,
 } from 'react-router-dom';
-import { Home } from './Home';
-import { Keyboard } from './Keyboard';
+import { HomePage } from './HomePage';
+import { TypingPage } from './TypingPage';
 
 export const Routes: React.FC = () => {
    return (
       <BrowserRouter>
          <RouterDomRoutes>
-            <Route path="/" element={<Home />} />
-            <Route path="keyboard" element={<Keyboard />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="typingPage" element={<TypingPage />} />
          </RouterDomRoutes>
       </BrowserRouter>
    );
