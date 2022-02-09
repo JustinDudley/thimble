@@ -9,7 +9,6 @@ export const KeyboardLogicWrapSection: React.FC<{
    setNumResets: React.Dispatch<React.SetStateAction<number>>;
 }> = ({ numResets, setNumResets }) => {
    const [keyboardCounter, setKeyboardCounter] = useState(0);
-   // const [numResets, setNumResets] = useState(0);
 
    return (
       <div className={styles.keyboardLogicWrapSection}>

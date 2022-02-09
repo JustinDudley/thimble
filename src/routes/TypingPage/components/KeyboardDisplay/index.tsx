@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { WholeKey } from '../WholeKey';
 
 import styles from './style.module.css';
@@ -12,9 +12,6 @@ export const KeyboardDisplay: React.FC<{
    const lettersMiddle = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
    const lettersBottom = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
    const spaceRow = [',', ' ', '.'];
-
-   // const [keyboardCounter, setKeyboardCounter] = useState(0);
-   // alert(numResets); // working
 
    return (
       <>
