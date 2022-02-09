@@ -4,14 +4,14 @@ import { UserConsole } from '../UserConsole';
 
 import styles from './style.module.css';
 
-export const KeyboardLogicWrapSection: React.FC<{
+export const KeyboardAndConsoleSection: React.FC<{
    numResets: number;
    setNumResets: React.Dispatch<React.SetStateAction<number>>;
 }> = ({ numResets, setNumResets }) => {
    const [keyboardCounter, setKeyboardCounter] = useState(0);
 
    return (
-      <div className={styles.keyboardLogicWrapSection}>
+      <div className={styles.keyboardAndConsoleSection}>
          <UserConsole
             keyboardCounter={keyboardCounter}
             numResets={numResets}
