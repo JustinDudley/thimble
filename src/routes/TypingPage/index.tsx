@@ -2,7 +2,6 @@ import React from 'react';
 import { SampleSection } from './components/SampleSection';
 import { HomeLinkSection } from './components/HomeLinkSection';
 import { KLWSWrapper } from './components/KLWSWrapper';
-// import { KeyboardLogicWrapSection } from './components/KeyboardLogicWrapSection';
 
 import styles from './style.module.css';
 
