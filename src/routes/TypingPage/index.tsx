@@ -1,7 +1,8 @@
 import React from 'react';
 import { SampleSection } from './components/SampleSection';
 import { HomeLinkSection } from './components/HomeLinkSection';
-import { KeyboardLogicWrapSection } from './components/KeyboardLogicWrapSection';
+import { KLWSWrapper } from './components/KLWSWrapper';
+// import { KeyboardLogicWrapSection } from './components/KeyboardLogicWrapSection';
 
 import styles from './style.module.css';
 
@@ -11,7 +12,7 @@ export const TypingPage: React.FC = () => {
          <div className={styles.typingPage}>
             <HomeLinkSection />
             <SampleSection />
-            <KeyboardLogicWrapSection />
+            <KLWSWrapper />
          </div>
       </div>
    );
