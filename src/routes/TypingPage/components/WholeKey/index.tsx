@@ -68,7 +68,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
    typedSentence,
    setTypedSentence,
 }) => {
-   const maxSentenceLength = 12;
+   const maxSentenceLength = 100;
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
    const [gradientRecord, setGradientRecord] = useState([
