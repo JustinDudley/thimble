@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { colors } from '../../../../helpers/jsColors'; //save
+// import { colors } from '../../../../helpers/jsColors'; //save
 
 import TargetLogo from '../../../../assets/images/target-logo.svg';
 import classNames from 'classnames';
@@ -18,8 +18,8 @@ const MiniBox: React.FC<MiniBoxProps> = ({
    gradientRecord,
    setGradientRecord,
 }) => {
-   const numMinisToShow = 3; //save
-   const [miniCounter, setMiniCounter] = useState(0); //save
+   // const numMinisToShow = 3; //save
+   // const [miniCounter, setMiniCounter] = useState(0); //save
 
    const numTargetsToShow = 2;
    const [isClicked, setIsClicked] = useState(false);
@@ -68,6 +68,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
    typedSentence,
    setTypedSentence,
 }) => {
+   const maxSentenceLength = 100;
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
    const [gradientRecord, setGradientRecord] = useState([
@@ -88,6 +89,14 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
       'toRightBottom',
    ];
 
+   const buildSentence = () => {
+      let localSentence = typedSentence;
+      if (localSentence.length >= maxSentenceLength) {
+         localSentence = localSentence.substring(1);
+      }
+      return localSentence + letter;
+   };
+
    return (
       <div
          className={classNames(styles.wholeKey, {
@@ -95,7 +104,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
          })}
          onClick={() => {
             setKeyCounter(keyCounter + 1);
-            setTypedSentence(typedSentence + letter);
+            setTypedSentence(buildSentence());
          }}
       >
          {miniBoxIds.map((miniBoxId) => (

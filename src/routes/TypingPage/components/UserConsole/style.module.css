@@ -7,6 +7,22 @@
    background-color: var(--home-purple);
 }
 
+.central {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   width: 0.1rem;
+}
+
+.farLeft {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   /* default font-size is 1rem, it seems */
+   /* ensure min-width is wider than maxSentenceLength is long. Currently, having min-width (9rem) be half the "size" of maxSentenceLength (18) is just barely safe, unless you type in a bunch of m's or w's. So, let's make the min-width be 3 times the size of maxSentenceLength, just to be ridiculously safe  */
+   min-width: 300rem;
+}
+
 .userSentence {
    height: 55%;
    display: flex;
@@ -14,6 +30,7 @@
    justify-content: center;
    align-items: center;
    background-color: white;
+   overflow: hidden;
 }
 
 .panel {
