@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { colors } from '../../../../helpers/jsColors'; //save
+// import { colors } from '../../../../helpers/jsColors'; //save
 
 import TargetLogo from '../../../../assets/images/target-logo.svg';
 import classNames from 'classnames';
@@ -18,8 +18,8 @@ const MiniBox: React.FC<MiniBoxProps> = ({
    gradientRecord,
    setGradientRecord,
 }) => {
-   const numMinisToShow = 3; //save
-   const [miniCounter, setMiniCounter] = useState(0); //save
+   // const numMinisToShow = 3; //save
+   // const [miniCounter, setMiniCounter] = useState(0); //save
 
    const numTargetsToShow = 2;
    const [isClicked, setIsClicked] = useState(false);
