@@ -68,6 +68,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
    typedSentence,
    setTypedSentence,
 }) => {
+   const maxSentenceLength = 12;
    const miniBoxIds = [0, 1, 2, 3, 4, 5, 6, 7, 8];
    const [keyCounter, setKeyCounter] = useState(0);
    const [gradientRecord, setGradientRecord] = useState([
@@ -88,6 +89,14 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
       'toRightBottom',
    ];
 
+   const buildSentence = () => {
+      let localSentence = typedSentence;
+      if (localSentence.length >= maxSentenceLength) {
+         localSentence = localSentence.substring(1);
+      }
+      return localSentence + letter;
+   };
+
    return (
       <div
          className={classNames(styles.wholeKey, {
@@ -95,7 +104,7 @@ export const WholeKey: React.FC<WholeKeyProps> = ({
          })}
          onClick={() => {
             setKeyCounter(keyCounter + 1);
-            setTypedSentence(typedSentence + letter);
+            setTypedSentence(buildSentence());
          }}
       >
          {miniBoxIds.map((miniBoxId) => (
