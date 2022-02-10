@@ -23,7 +23,13 @@ const ResetButton: React.FC<{
 const UserSentence: React.FC<{ typedSentence: string }> = ({
    typedSentence,
 }) => {
-   return <div className={styles.userSentence}>{typedSentence}</div>;
+   return (
+      <div className={styles.userSentence}>
+         <div className={styles.central}>
+            <div className={styles.farLeft}>{typedSentence}</div>
+         </div>
+      </div>
+   );
 };
 
 const Panel: React.FC<{

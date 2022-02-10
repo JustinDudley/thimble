@@ -7,6 +7,24 @@
    background-color: var(--home-purple);
 }
 
+.central {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   width: 0.1rem;
+}
+
+.farLeft {
+   /* ensure width is bigger than string is long */
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   min-width: 9rem;
+   color: red;
+   border: 1px solid red;
+   /* default font-size is 1rem, apparently/probably */
+}
+
 .userSentence {
    height: 55%;
    display: flex;
